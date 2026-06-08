@@ -35,3 +35,1633 @@
 [  880304ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
 [ 2472689ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
 [ 2473001ms] [LOG] [Fast Refresh] done in 427ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2582827ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2582839ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2647473ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2647789ms] [LOG] [Fast Refresh] done in 388ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2656232ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2656504ms] [LOG] [Fast Refresh] done in 370ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2656607ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2656655ms] [LOG] [Fast Refresh] done in 151ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2656711ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2656900ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2657058ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2657061ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2657118ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist:0
+[ 2657323ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2657369ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2659606ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2659664ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2659776ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2659871ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2659873ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2659987ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2660027ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2660028ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2660032ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2660045ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2660048ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[ 2660122ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2660178ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2660216ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/this-does-not-exist:0
+[ 2660500ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[ 2660675ms] Error: ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/app/dashboard/client/page.tsx:385:7)
+    at Object.getCompilationErrors (file://C:\projects\campywin-demo\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file://C:\projects\campywin-demo\node_modules\next\dist\server\lib\dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file://C:\projects\campywin-demo\node_modules\next\dist\server\dev\next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file://C:\projects\campywin-demo\node_modules\next\dist\server\dev\next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file://C:\projects\campywin-demo\node_modules\next\dist\server\base-server.js:1694:30)
+[ 2660676ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2660686ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2660753ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2660883ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2660892ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2660949ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661010ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661073ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661137ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661200ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661263ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661325ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661388ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661451ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661514ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661577ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661640ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661704ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661767ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661828ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661892ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2661955ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662018ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662082ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662145ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662209ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662271ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662333ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662396ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662458ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662520ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662584ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662646ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662709ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662773ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662835ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662897ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2662958ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663020ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663083ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663147ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663207ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663269ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663332ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663393ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663456ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663518ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663581ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663643ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663705ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663768ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663832ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663896ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2663958ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664019ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664082ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664142ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664205ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664265ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664328ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664391ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664452ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664517ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664580ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664642ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664704ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664767ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664827ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664891ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2664954ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2665015ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2665077ms] [ERROR] ./src/app/dashboard/client/page.tsx:385:7
+Expected corresponding JSX closing tag for <ClientLayout>
+  383 |       {/* Captain chatbot */}
+  384 |       <CaptainChatbot />
+> 385 |     </DashboardLayout>
+      |       ^^^^^^^^^^^^^^^
+  386 |   );
+  387 | }
+  388 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/dashboard/client/page.tsx [Client Component Browser]
+    ./src/app/dashboard/client/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/dashboard/client/page.tsx [Client Component SSR]
+    ./src/app/dashboard/client/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[ 2665203ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2665866ms] [LOG] [Fast Refresh] done in 767ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2666163ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2666421ms] [LOG] [Fast Refresh] done in 369ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[ 2666475ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist:0
+[ 2666581ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2666620ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682293ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682463ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2682478ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682539ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist?_rsc=gJvLbHS0Udr_qZza:0
+[ 2682579ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682699ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682775ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/this-does-not-exist:0
+[ 2682958ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2682997ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2750678ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 2750780ms] [LOG] [Fast Refresh] done in 204ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

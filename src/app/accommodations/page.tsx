@@ -51,7 +51,7 @@ export default function AccommodationsPage() {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-gradient-to-br from-emerald-950 to-emerald-900 text-white pt-28 pb-16 px-6">
+      <div className="bg-gradient-to-br from-emerald-950 to-emerald-900 text-white pt-16 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-3">Find Your Perfect Outpost</h1>
           <p className="text-emerald-200/80 text-lg max-w-xl">Verified glamping tents, eco lodges, beach camps, and more across Tunisia</p>
@@ -93,50 +93,48 @@ export default function AccommodationsPage() {
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">{filtered.length} properties found</p>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map(acc => (
             <div
               key={acc.id}
-              className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer"
+              className="group cursor-pointer"
               onClick={() => setSelected(acc)}
             >
-              <div className="relative h-56 overflow-hidden">
-                <Image src={acc.image} alt={acc.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+              {/* Image */}
+              <div className="relative h-72 rounded-[2rem] overflow-hidden mb-5 bg-gray-200 dark:bg-gray-700">
+                <Image src={acc.image} alt={acc.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
                 <button
                   onClick={e => toggleLike(acc.id, e)}
-                  className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow hover:scale-110 transition-transform"
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow hover:scale-110 transition-transform z-10"
                 >
                   <Heart className={`w-4 h-4 ${liked.includes(acc.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
                 </button>
                 {!acc.available && (
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-[2rem]">
                     <Badge variant="secondary" className="text-base px-4 py-1">Fully Booked</Badge>
                   </div>
                 )}
-                <Badge className="absolute top-3 left-3 bg-white/90 text-gray-700">{acc.category}</Badge>
+                <Badge className="absolute top-4 left-4 bg-white/90 text-gray-700 backdrop-blur">{acc.category}</Badge>
               </div>
-              <div className="p-5">
+
+              {/* Content */}
+              <div className="px-1">
                 <div className="flex items-start justify-between mb-1 gap-2">
-                  <h3 className="font-bold text-gray-900 dark:text-white leading-snug">{acc.title}</h3>
-                  <div className="flex items-center gap-1 flex-shrink-0">
-                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white leading-snug">{acc.title}</h3>
+                  <div className="flex items-center gap-1 flex-shrink-0 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded-lg">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{acc.rating}</span>
                   </div>
                 </div>
                 <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1 mb-3">
                   <MapPin className="w-3.5 h-3.5" /> {acc.location}
                 </p>
-                <div className="flex gap-2 flex-wrap mb-4">
-                  {acc.amenities.slice(0, 3).map(a => (
-                    <span key={a} className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full">{a}</span>
-                  ))}
-                </div>
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
+                <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-lg font-black text-emerald-600 dark:text-emerald-400">{acc.price} <span className="text-sm font-semibold">TND</span></span>
+                    <span className="text-xl font-black text-emerald-600 dark:text-emerald-400">{acc.price} DT</span>
                     <span className="text-xs text-gray-400">/night</span>
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                  <div className="flex items-center gap-1 text-xs text-gray-500 bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded-full">
                     <Users className="w-3.5 h-3.5" /> Up to {acc.capacity}
                   </div>
                 </div>

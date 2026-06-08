@@ -1,20 +1,12 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Home, Briefcase, User, MapPin, Calendar, TrendingUp, Star, Bookmark, Video, Luggage } from 'lucide-react';
+import { MapPin, Calendar, Star, Bookmark, Video, Luggage, Briefcase } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { DashboardLayout } from '@/components/layout/dashboard-layout';
-import { CaptainChatbot } from '@/components/captain/captain-chatbot';
+import { ClientLayout } from '@/components/layout/client-layout';
 import { useStore } from '@/lib/store';
 import { MY_BOOKINGS, MY_APPLICATIONS } from '@/lib/mock-data';
-
-const NAV = [
-  { label: 'Overview', href: '/dashboard/client', icon: Home },
-  { label: 'My Bookings', href: '/dashboard/client', icon: MapPin },
-  { label: 'My Applications', href: '/dashboard/client', icon: Briefcase },
-  { label: 'Profile', href: '/dashboard/client', icon: User },
-];
 
 const EQUIPMENT = [
   {
@@ -153,7 +145,7 @@ export default function ClientDashboard() {
     : 'TBD';
 
   return (
-    <DashboardLayout navItems={NAV} title="My Dashboard">
+    <ClientLayout>
       <div className="max-w-5xl mx-auto space-y-10">
 
         {/* ── Greeting ── */}
@@ -388,8 +380,6 @@ export default function ClientDashboard() {
         </section>
       </div>
 
-      {/* Captain chatbot */}
-      <CaptainChatbot />
-    </DashboardLayout>
+    </ClientLayout>
   );
 }

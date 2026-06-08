@@ -27,7 +27,7 @@ export default function JobsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar />
 
-      <div className="bg-gradient-to-br from-purple-950 to-purple-900 text-white pt-28 pb-16 px-6">
+      <div className="bg-gradient-to-br from-purple-950 to-purple-900 text-white pt-16 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-3">Adventure Career Opportunities</h1>
           <p className="text-purple-200/80 text-lg max-w-xl">Find your dream job in the outdoor and camping industry across Tunisia</p>

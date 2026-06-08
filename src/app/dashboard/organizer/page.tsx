@@ -42,7 +42,7 @@ export default function OrganizerDashboard() {
   const myAccommodations = ACCOMMODATIONS.slice(0, 3);
 
   return (
-    <DashboardLayout navItems={NAV} title="Organizer Dashboard" accentColor="purple">
+    <DashboardLayout navItems={NAV} title="Organizer Dashboard">
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="mb-6">
           <TabsTrigger value="overview">Overview</TabsTrigger>

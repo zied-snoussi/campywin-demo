@@ -36,7 +36,7 @@ export default function EventsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar />
 
-      <div className="bg-gradient-to-br from-blue-950 to-blue-900 text-white pt-28 pb-16 px-6">
+      <div className="bg-gradient-to-br from-blue-950 to-blue-900 text-white pt-16 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-3">Outdoor Events & Adventures</h1>
           <p className="text-blue-200/80 text-lg max-w-xl">Discover and join curated camping events, workshops, and expeditions across Tunisia</p>

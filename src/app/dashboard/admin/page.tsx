@@ -45,7 +45,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <DashboardLayout navItems={NAV} title="Admin Dashboard" accentColor="blue">
+    <DashboardLayout navItems={NAV} title="Admin Dashboard">
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="mb-6">
           <TabsTrigger value="overview">Overview</TabsTrigger>

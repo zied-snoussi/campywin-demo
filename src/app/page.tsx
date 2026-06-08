@@ -2,18 +2,16 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Shield, Zap, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Globe, ArrowUpRight, Camera, Shield, Heart } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { ACCOMMODATIONS, EVENTS } from '@/lib/mock-data';
 
 const STATS = [
-  { value: '2,847', label: 'Active Users', icon: Users, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-900/20' },
-  { value: '489', label: 'Verified Stays', icon: Tent, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20' },
-  { value: '312', label: 'Events Hosted', icon: Globe, color: 'text-purple-600 dark:text-purple-400', bg: 'bg-purple-50 dark:bg-purple-900/20' },
-  { value: '4.8★', label: 'Avg. Rating', icon: Star, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/20' },
+  { value: '2,847', label: 'Active Users', icon: Users, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-100 dark:bg-emerald-900/30' },
+  { value: '489', label: 'Verified Stays', icon: Tent, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+  { value: '98%', label: 'Satisfaction Rate', icon: Star, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-100 dark:bg-amber-900/30' },
+  { value: '24/7', label: 'Global Support', icon: Shield, color: 'text-purple-600 dark:text-purple-400', bg: 'bg-purple-100 dark:bg-purple-900/30' },
 ];
 
 const TESTIMONIALS = [
@@ -29,168 +27,161 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
 
-      {/* Hero */}
-      <header className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+      {/* ── Hero ── */}
+      <header className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=1920&q=80"
-            alt="Camping landscape"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
+            alt="Sahara desert at sunset"
+            fill className="object-cover" priority unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/85 via-emerald-900/50 to-transparent dark:from-gray-950/90 dark:via-gray-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/80 via-emerald-900/40 to-transparent dark:from-gray-950/90 dark:via-gray-900/50" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-2xl">
-            <Badge className="mb-6 bg-emerald-500/20 text-emerald-200 border-emerald-500/30 backdrop-blur-sm">
-              🏕️ Tunisia&apos;s #1 Camping Platform
-            </Badge>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter mb-6">
               Explore the Wild,<br />
               <span className="text-emerald-400">Find Your Win</span>
             </h1>
-            <p className="text-lg text-emerald-50/80 mb-10 leading-relaxed">
-              Discover breathtaking camping stays, join unforgettable outdoor events, and launch your adventure career — all in one platform built for Tunisia.
+            <p className="text-xl text-emerald-50/80 mb-10 leading-relaxed">
+              The premier digital outpost for camping adventures. Secure your stay or start your outdoor career in Tunisia's most breathtaking landscapes.
             </p>
 
             {/* Search bar */}
-            <div className="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-2">
-              <div className="flex-1 flex items-center px-4 gap-3">
-                <MapPin className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+            <div className="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl">
+              <div className="flex-1 flex items-center px-4 gap-3 dark:text-gray-300">
+                <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                 <input
-                  className="w-full bg-transparent text-gray-900 dark:text-white py-3 text-sm font-medium placeholder:text-gray-400 outline-none"
+                  className="w-full bg-transparent text-gray-900 dark:text-white py-3 font-medium placeholder:text-gray-400 dark:placeholder:text-gray-500 outline-none text-sm"
                   placeholder="Where to next? (Douz, Tabarka...)"
                 />
               </div>
-              <div className="hidden sm:block w-px h-10 bg-gray-200 dark:bg-gray-600 self-center" />
-              <select className="flex-1 bg-transparent text-gray-900 dark:text-white py-3 px-4 text-sm font-medium outline-none">
-                <option>Camping Stays</option>
-                <option>Events</option>
-                <option>Job Offers</option>
-              </select>
-              <Button onClick={() => router.push('/accommodations')} className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl h-auto">
-                <Search className="w-4 h-4 mr-2" />
-                Search
-              </Button>
+              <div className="hidden md:block w-px h-10 bg-gray-200 dark:bg-gray-600 self-center" />
+              <div className="flex-1 flex items-center px-4 gap-3">
+                <Briefcase className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+                <select className="w-full bg-transparent text-gray-900 dark:text-white py-3 font-medium outline-none text-sm">
+                  <option>Looking for Stays</option>
+                  <option>Looking for Jobs</option>
+                </select>
+              </div>
+              <button
+                onClick={() => router.push('/accommodations')}
+                className="bg-emerald-600 dark:bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 active:scale-95">
+                <Search className="w-5 h-5" />
+                <span className="hidden sm:inline">Search</span>
+              </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Entry cards */}
-      <section className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { icon: Tent, title: 'For Adventurers', desc: 'Discover off-grid sanctuaries with modern amenities. Book authentic stays in spectacular locations.', cta: 'Explore Stays', href: '/accommodations', color: 'from-emerald-500 to-emerald-600', border: 'border-emerald-200 dark:border-emerald-800' },
-            { icon: Globe, title: 'For Event Goers', desc: 'Join curated outdoor events — from desert stargazing to mountain treks and photography camps.', cta: 'Browse Events', href: '/events', color: 'from-blue-500 to-blue-600', border: 'border-blue-200 dark:border-blue-800' },
-            { icon: Briefcase, title: 'For Job Seekers', desc: 'Launch your outdoor career. Find roles in event coordination, guiding, catering and more.', cta: 'Find Jobs', href: '/jobs', color: 'from-purple-500 to-purple-600', border: 'border-purple-200 dark:border-purple-800' },
-          ].map(({ icon: Icon, title, desc, cta, href, color, border }) => (
-            <div key={title} className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border ${border} group cursor-pointer`} onClick={() => router.push(href)}>
-              <div className={`w-12 h-12 bg-gradient-to-br ${color} rounded-xl flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform`}>
-                <Icon className="w-6 h-6" />
+      {/* ── Entry Cards (2-col) ── */}
+      <section className="max-w-7xl mx-auto px-8 -mt-20 relative z-20 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* For Adventurers */}
+          <div className="group relative overflow-hidden rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/accommodations')}>
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-[2rem]" />
+            <div className="relative bg-white dark:bg-gray-800 rounded-[2rem] p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
+              <div className="inline-flex w-fit mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                  <Tent className="w-7 h-7" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">{desc}</p>
-              <Button variant="outline" className="gap-2 group-hover:gap-3 transition-all">
-                {cta} <ArrowRight className="w-4 h-4" />
-              </Button>
+              <h3 className="text-2xl md:text-3xl font-black text-emerald-950 dark:text-emerald-50 mb-3">For Adventurers</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed flex-grow">
+                Discover off-grid sanctuaries with modern amenities. Book authentic camping stays in Tunisia's most spectacular locations.
+              </p>
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit">
+                Explore Stays <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
             </div>
-          ))}
+          </div>
+
+          {/* For Organizers */}
+          <div className="group relative overflow-hidden rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/dashboard/organizer')}>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-[2rem]" />
+            <div className="relative bg-white dark:bg-gray-800 rounded-[2rem] p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
+              <div className="inline-flex w-fit mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                  <Globe className="w-7 h-7" />
+                </div>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-purple-950 dark:text-purple-50 mb-3">For Organizers</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed flex-grow">
+                Manage your property, reach travelers worldwide, and grow your outdoor business with professional tools.
+              </p>
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit">
+                List Your Property <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">Trusted by Travelers Worldwide</h2>
-            <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Connecting adventurers and hosts across Tunisia, creating unforgettable outdoor experiences.</p>
+      {/* ── Trust & Stats ── */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
+              Trusted by Travelers Worldwide
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Our platform connects adventurers and hosts across Tunisia, creating unforgettable experiences.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {STATS.map(({ value, label, icon: Icon, color, bg }) => (
-              <div key={label} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm text-center border border-gray-100 dark:border-gray-700">
-                <div className={`w-10 h-10 ${bg} rounded-lg flex items-center justify-center mx-auto mb-3`}>
-                  <Icon className={`w-5 h-5 ${color}`} />
+              <div key={label} className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700">
+                <div className="flex justify-center mb-4">
+                  <div className={`w-12 h-12 ${bg} rounded-lg flex items-center justify-center`}>
+                    <Icon className={`w-6 h-6 ${color}`} />
+                  </div>
                 </div>
-                <div className={`text-3xl font-black mb-1 ${color}`}>{value}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{label}</div>
+                <div className={`text-4xl md:text-5xl font-black mb-2 ${color}`}>{value}</div>
+                <div className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Popular Destinations */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">Explore Tunisia&apos;s Wild Regions</h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From the Sahara dunes to the Mediterranean coast — every region is an adventure</p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {[
-            { name: 'Douz', region: 'Sahara', image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&q=80', count: 48 },
-            { name: 'Tabarka', region: 'Coast', image: 'https://images.unsplash.com/photo-1496545672447-f699b503d270?w=400&q=80', count: 31 },
-            { name: 'Ain Draham', region: 'Mountains', image: 'https://images.unsplash.com/photo-1510672981848-a1c4f1cb5ccf?w=400&q=80', count: 24 },
-            { name: 'Tozeur', region: 'Oasis', image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=400&q=80', count: 37 },
-            { name: 'Matmata', region: 'Desert', image: 'https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=400&q=80', count: 19 },
-            { name: 'Nabeul', region: 'Cap Bon', image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80', count: 42 },
-          ].map(({ name, region, image, count }) => (
-            <Link href="/accommodations" key={name} className="group relative rounded-2xl overflow-hidden aspect-[3/4] shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer">
-              <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-white font-bold text-sm leading-tight">{name}</p>
-                <p className="text-white/70 text-xs">{region} · {count} stays</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Stays */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-end justify-between mb-10">
+      {/* ── Featured Outposts ── */}
+      <section id="featured" className="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex items-end justify-between mb-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2">Featured Outposts</h2>
-              <p className="text-gray-500 dark:text-gray-400">Hand-picked camping experiences across Tunisia</p>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">Verified Outposts</h2>
+              <p className="text-gray-700 dark:text-gray-300 text-lg">Hand-picked camping locations vetted for authenticity.</p>
             </div>
-            <Link href="/accommodations" className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline flex items-center gap-1">
-              View all <ArrowRight className="w-4 h-4" />
+            <Link href="/accommodations" className="hidden md:flex items-center gap-2 font-bold text-emerald-700 dark:text-emerald-300 py-3 px-6 rounded-xl border-2 border-emerald-700/30 dark:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/30 transition-all">
+              View All <Globe className="w-5 h-5" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {ACCOMMODATIONS.slice(0, 3).map((acc) => (
-              <Link href="/accommodations" key={acc.id} className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                <div className="relative h-52 overflow-hidden">
-                  <Image src={acc.image} alt={acc.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
-                  {!acc.available && (
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                      <Badge variant="secondary">Fully Booked</Badge>
-                    </div>
-                  )}
-                  <Badge className="absolute top-3 left-3 bg-white/90 text-gray-700 hover:bg-white">{acc.category}</Badge>
+              <Link href="/accommodations" key={acc.id} className="group cursor-pointer">
+                <div className="relative h-80 rounded-[2rem] overflow-hidden mb-6 bg-gray-200 dark:bg-gray-700">
+                  <Image
+                    src={acc.image} alt={acc.title} fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    unoptimized
+                  />
                 </div>
-                <div className="p-5">
-                  <div className="flex items-start justify-between mb-1">
-                    <h3 className="font-bold text-gray-900 dark:text-white leading-snug">{acc.title}</h3>
-                    <div className="flex items-center gap-1 text-sm ml-2 flex-shrink-0">
-                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      <span className="font-semibold text-gray-700 dark:text-gray-300">{acc.rating}</span>
+                <div className="flex justify-between items-start px-1">
+                  <div className="flex-1">
+                    <h4 className="text-2xl font-black text-gray-900 dark:text-white mb-1">{acc.title}</h4>
+                    <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400 mb-4">
+                      <MapPin className="w-4 h-4" />
+                      {acc.location}
+                    </div>
+                    <div className="text-2xl font-black text-emerald-600 dark:text-emerald-400">
+                      {acc.price} DT<span className="text-sm font-medium text-gray-600 dark:text-gray-400">/night</span>
                     </div>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1 mb-3">
-                    <MapPin className="w-3.5 h-3.5" /> {acc.location}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-lg font-black text-emerald-600 dark:text-emerald-400">{acc.price} <span className="text-sm font-semibold">TND</span></span>
-                      <span className="text-xs text-gray-400">/night</span>
-                    </div>
-                    <span className="text-xs text-gray-400">{acc.reviewCount} reviews</span>
+                  <div className="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 p-3 rounded-2xl group-hover:bg-emerald-600 dark:group-hover:bg-emerald-500 group-hover:text-white transition-colors flex-shrink-0 ml-4">
+                    <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
               </Link>
@@ -199,9 +190,174 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── Career Wins (Bento Grid) ── */}
+      <section id="careers" className="py-24 px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-16">Career Wins</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+            {/* Featured Job - Large Card */}
+            <Link href="/jobs" className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-purple-600 to-purple-700 dark:from-purple-700 dark:to-purple-800 rounded-[2rem] p-10 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+              <div>
+                <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 inline-block backdrop-blur-sm">🔥 HOT JOB</span>
+                <h3 className="text-4xl font-black text-white mb-4 group-hover:-translate-y-1 transition-transform">Wilderness Operations Lead</h3>
+                <p className="text-white/90 text-lg mb-8 leading-relaxed">Oversee high-altitude basecamps in the Atlas mountains. Requires 5+ years experience in extreme environments and logistics management.</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold text-white">
+                  2,400 – 3,200 <span className="text-sm font-normal text-white/70">TND/mo</span>
+                </div>
+                <button className="bg-white text-purple-700 px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-white/90 transition-all active:scale-95 hover:shadow-xl">
+                  Apply Now
+                </button>
+              </div>
+            </Link>
+
+            {/* Card 2 */}
+            <Link href="/jobs" className="md:col-span-2 bg-white dark:bg-gray-700 rounded-[2rem] p-8 flex items-center justify-between group cursor-pointer hover:shadow-xl transition-all border border-gray-200 dark:border-gray-600 shadow-md">
+              <div className="flex items-center gap-6">
+                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+                  <Camera className="w-7 h-7" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white">Content Creator</h4>
+                  <p className="text-gray-600 dark:text-gray-400 font-medium">Social Media & Photography</p>
+                </div>
+              </div>
+              <ArrowRight className="w-6 h-6 text-blue-600 dark:text-blue-400 transition-transform group-hover:translate-x-2" />
+            </Link>
+
+            {/* Card 3 */}
+            <Link href="/jobs" className="md:col-span-1 bg-white dark:bg-gray-700 rounded-[2rem] p-8 flex flex-col justify-between group cursor-pointer hover:shadow-xl transition-all border border-gray-200 dark:border-gray-600 shadow-md">
+              <Globe className="w-10 h-10 text-emerald-600 dark:text-emerald-400 mb-4" />
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white">Cultural Liaison</h4>
+            </Link>
+
+            {/* Card 4 */}
+            <Link href="/jobs" className="md:col-span-1 bg-white dark:bg-gray-700 rounded-[2rem] p-8 flex flex-col justify-between group cursor-pointer hover:shadow-xl transition-all border border-gray-200 dark:border-gray-600 shadow-md">
+              <Briefcase className="w-10 h-10 text-emerald-600 dark:text-emerald-400 mb-4" />
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white">Elite Scout</h4>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section id="testimonials" className="py-24 px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-6 border border-emerald-200 dark:border-emerald-800/50">
+              <span className="text-xl">⭐</span>
+              <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Adventurer Voices</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+              What Our Community Says
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Real stories from remote workers, guides, and adventurers who've transformed their experience on CampyWin.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map(({ name, role, text, rating, avatar }) => (
+              <div key={name} className="group bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all duration-300 shadow-sm hover:shadow-xl">
+                <div className="flex gap-1 mb-6">
+                  {Array.from({ length: rating }).map((_, i) => (
+                    <span key={i} className="text-xl text-emerald-500">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">&quot;{text}&quot;</p>
+                <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold shadow-lg">
+                    {avatar}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-gray-900 dark:text-white text-sm">{name}</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{role}</p>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-emerald-600 dark:text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              Ready to share your adventure?
+            </h3>
+            <button
+              onClick={() => router.push('/login')}
+              className="bg-emerald-600 dark:bg-emerald-500 text-white px-12 py-5 rounded-xl font-bold shadow-xl hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all active:scale-95 inline-flex items-center gap-3">
+              <span>Join Our Community</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── About Section ── */}
+      <section id="about" className="py-24 px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-6 border border-emerald-200 dark:border-emerald-800/50">
+              <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">About Us</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Our Story</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              CampyWin is redefining adventure by connecting explorers with authentic experiences and empowering hosts across Tunisia.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80"
+                alt="CampyWin Community" fill className="object-cover" unoptimized
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-3xl font-black text-gray-900 dark:text-white">Built for Adventurers & Hosts</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                CampyWin was founded on a simple belief: everyone deserves access to authentic experiences in Tunisia's breathtaking locations. Whether you're a traveler seeking your next basecamp, a guide wanting to share your passion, or a property owner wanting to earn with purpose — CampyWin is your sanctuary.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: Globe, title: 'Global Community', desc: 'Connect with like-minded adventurers across 150+ countries' },
+                  { icon: Shield, title: 'Trust & Safety', desc: 'Verified listings and comprehensive safety measures protect our community' },
+                  { icon: Heart, title: 'Purpose-Driven', desc: 'Supporting local Tunisian communities and sustainable tourism practices' },
+                ].map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/40 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Icon className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 dark:text-white mb-0.5">{title}</h4>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Impact stats */}
+          <div className="bg-gradient-to-r from-emerald-50 to-emerald-50/50 dark:from-emerald-900/20 dark:to-emerald-900/10 border border-emerald-200 dark:border-emerald-800/30 rounded-2xl p-12 text-center">
+            <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-8">Our Impact So Far</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[['150+', 'Countries'], ['50k+', 'Happy Travelers'], ['5k+', 'Host Partners'], ['TND 10M+', 'Shared Earnings']].map(([val, lbl]) => (
+                <div key={lbl}>
+                  <div className="text-4xl font-black text-emerald-600 dark:text-emerald-400 mb-2">{val}</div>
+                  <div className="text-gray-600 dark:text-gray-300 font-medium">{lbl}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Upcoming Events ── */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2">Upcoming Adventures</h2>
@@ -213,14 +369,14 @@ export default function LandingPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {EVENTS.filter(e => e.status === 'UPCOMING').slice(0, 2).map((ev) => (
-              <Link href="/events" key={ev.id} className="group flex gap-5 bg-gray-50 dark:bg-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700">
+              <Link href="/events" key={ev.id} className="group flex gap-5 bg-white dark:bg-gray-700 rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-600">
                 <div className="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0">
                   <Image src={ev.image} alt={ev.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <Badge variant="outline" className="text-xs">{ev.category}</Badge>
+                    <span className="text-xs bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full font-medium">{ev.category}</span>
                     <span className="text-xs text-gray-400">{new Date(ev.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                   </div>
                   <h3 className="font-bold text-gray-900 dark:text-white leading-snug mb-1">{ev.title}</h3>
@@ -228,84 +384,12 @@ export default function LandingPage() {
                     <MapPin className="w-3.5 h-3.5" /> {ev.location}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">{ev.price} TND</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-bold text-sm">{ev.price} TND/person</span>
                     <span className="text-xs text-gray-400">{ev.registered}/{ev.capacity} registered</span>
                   </div>
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why CampyWin */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">Why CampyWin?</h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">We built everything you need for the perfect outdoor experience</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: Shield, title: 'Secure & Trusted', desc: 'All properties are verified. Payments are protected. Your adventure is safe with us.', color: 'text-emerald-600', bg: 'bg-emerald-50 dark:bg-emerald-900/20' },
-            { icon: Zap, title: 'Instant Booking', desc: 'Book in seconds. Real-time availability, instant confirmation, and easy management.', color: 'text-blue-600', bg: 'bg-blue-50 dark:bg-blue-900/20' },
-            { icon: Globe, title: 'Local Expertise', desc: "Built specifically for Tunisia's unique outdoor landscape and cultural experience.", color: 'text-purple-600', bg: 'bg-purple-50 dark:bg-purple-900/20' },
-          ].map(({ icon: Icon, title, desc, color, bg }) => (
-            <div key={title} className="text-center p-8">
-              <div className={`w-16 h-16 ${bg} rounded-2xl flex items-center justify-center mx-auto mb-5`}>
-                <Icon className={`w-8 h-8 ${color}`} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-b from-emerald-950 to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black mb-3">Adventurers Love Us</h2>
-            <p className="text-emerald-200/70 max-w-xl mx-auto">Real stories from our community of outdoor enthusiasts</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map(({ name, role, text, rating, avatar }) => (
-              <div key={name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-gray-200 text-sm leading-relaxed mb-6">&quot;{text}&quot;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-sm">
-                    {avatar}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white text-sm">{name}</p>
-                    <p className="text-emerald-300/70 text-xs">{role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-emerald-600 dark:bg-emerald-700">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-5">Ready for Your Next Adventure?</h2>
-          <p className="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
-            Join thousands of adventurers discovering Tunisia&apos;s best camping destinations. Sign up free today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 font-bold px-10 h-14 text-base" onClick={() => router.push('/login')}>
-              Start Exploring
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-bold px-10 h-14 text-base" onClick={() => router.push('/accommodations')}>
-              Browse Stays
-            </Button>
           </div>
         </div>
       </section>
