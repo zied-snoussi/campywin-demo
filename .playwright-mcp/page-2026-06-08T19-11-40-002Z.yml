@@ -1,0 +1,255 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "CampyWin CampyWin" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "CampyWin" [ref=e6]
+          - generic [ref=e7]: CampyWin
+        - generic [ref=e8]:
+          - link "Stays" [ref=e9] [cursor=pointer]:
+            - /url: /accommodations
+          - link "Events" [ref=e10] [cursor=pointer]:
+            - /url: /events
+          - link "Jobs" [ref=e11] [cursor=pointer]:
+            - /url: /jobs
+        - generic [ref=e12]:
+          - button [ref=e13]:
+            - img [ref=e14]
+          - button "Sign In" [ref=e16]
+          - button "Get Started" [ref=e17]
+    - generic [ref=e19]:
+      - heading "Find Your Perfect Outpost" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Verified glamping tents, eco lodges, beach camps, and more across Tunisia
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - img [ref=e25]
+          - textbox "Search by name or location..." [ref=e28]
+        - combobox [ref=e29]:
+          - img
+          - generic [ref=e30]: rating
+          - img: ▼
+        - textbox [ref=e31]: rating
+      - generic [ref=e32]:
+        - button "All" [ref=e33]
+        - button "Glamping" [ref=e34]
+        - button "Eco Lodge" [ref=e35]
+        - button "Beach Camp" [ref=e36]
+        - button "Safari" [ref=e37]
+      - paragraph [ref=e38]: 6 properties found
+      - generic [ref=e39]:
+        - generic [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]:
+            - img "Sahara Oasis Glamping Tent" [ref=e42]
+            - button [ref=e43]:
+              - img [ref=e44]
+            - generic [ref=e46]: Glamping
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - heading "Sahara Oasis Glamping Tent" [level=3] [ref=e49]
+              - generic [ref=e50]:
+                - img [ref=e51]
+                - generic [ref=e53]: "4.9"
+            - paragraph [ref=e54]:
+              - img [ref=e55]
+              - text: Douz, Kebili
+            - generic [ref=e58]:
+              - generic [ref=e59]: WiFi
+              - generic [ref=e60]: Breakfast
+              - generic [ref=e61]: AC
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - generic [ref=e64]: 275 TND
+                - text: /night
+              - generic [ref=e65]:
+                - img [ref=e66]
+                - text: Up to 2
+        - generic [ref=e71] [cursor=pointer]:
+          - generic [ref=e72]:
+            - img "Mediterranean Coast Retreat" [ref=e73]
+            - button [ref=e74]:
+              - img [ref=e75]
+            - generic [ref=e77]: Beach Camp
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - heading "Mediterranean Coast Retreat" [level=3] [ref=e80]
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - generic [ref=e84]: "4.8"
+            - paragraph [ref=e85]:
+              - img [ref=e86]
+              - text: Tabarka, Jendouba
+            - generic [ref=e89]:
+              - generic [ref=e90]: Beach Access
+              - generic [ref=e91]: Kayaking
+              - generic [ref=e92]: BBQ
+            - generic [ref=e93]:
+              - generic [ref=e94]:
+                - generic [ref=e95]: 370 TND
+                - text: /night
+              - generic [ref=e96]:
+                - img [ref=e97]
+                - text: Up to 6
+        - generic [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]:
+            - img "Atlas Mountain Eco Lodge" [ref=e104]
+            - button [ref=e105]:
+              - img [ref=e106]
+            - generic [ref=e108]: Eco Lodge
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - heading "Atlas Mountain Eco Lodge" [level=3] [ref=e111]
+              - generic [ref=e112]:
+                - img [ref=e113]
+                - generic [ref=e115]: "4.7"
+            - paragraph [ref=e116]:
+              - img [ref=e117]
+              - text: Ain Draham, Jendouba
+            - generic [ref=e120]:
+              - generic [ref=e121]: Hiking Trails
+              - generic [ref=e122]: Fire Pit
+              - generic [ref=e123]: Organic Meals
+            - generic [ref=e124]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: 195 TND
+                - text: /night
+              - generic [ref=e127]:
+                - img [ref=e128]
+                - text: Up to 4
+        - generic [ref=e133] [cursor=pointer]:
+          - generic [ref=e134]:
+            - img "Desert Star Safari Camp" [ref=e135]
+            - button [ref=e136]:
+              - img [ref=e137]
+            - generic [ref=e140]: Fully Booked
+            - generic [ref=e141]: Safari
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - heading "Desert Star Safari Camp" [level=3] [ref=e144]
+              - generic [ref=e145]:
+                - img [ref=e146]
+                - generic [ref=e148]: "4.6"
+            - paragraph [ref=e149]:
+              - img [ref=e150]
+              - text: Matmata, Gabes
+            - generic [ref=e153]:
+              - generic [ref=e154]: Guided Tours
+              - generic [ref=e155]: Camel Rides
+              - generic [ref=e156]: Stargazing
+            - generic [ref=e157]:
+              - generic [ref=e158]:
+                - generic [ref=e159]: 230 TND
+                - text: /night
+              - generic [ref=e160]:
+                - img [ref=e161]
+                - text: Up to 3
+        - generic [ref=e166] [cursor=pointer]:
+          - generic [ref=e167]:
+            - img "Oasis Palm Springs Camp" [ref=e168]
+            - button [ref=e169]:
+              - img [ref=e170]
+            - generic [ref=e172]: Glamping
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - heading "Oasis Palm Springs Camp" [level=3] [ref=e175]
+              - generic [ref=e176]:
+                - img [ref=e177]
+                - generic [ref=e179]: "4.5"
+            - paragraph [ref=e180]:
+              - img [ref=e181]
+              - text: Tozeur, Tozeur
+            - generic [ref=e184]:
+              - generic [ref=e185]: Pool
+              - generic [ref=e186]: Spa
+              - generic [ref=e187]: Restaurant
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - generic [ref=e190]: 170 TND
+                - text: /night
+              - generic [ref=e191]:
+                - img [ref=e192]
+                - text: Up to 2
+        - generic [ref=e197] [cursor=pointer]:
+          - generic [ref=e198]:
+            - img "Cap Bon Beachside Tents" [ref=e199]
+            - button [ref=e200]:
+              - img [ref=e201]
+            - generic [ref=e203]: Beach Camp
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - heading "Cap Bon Beachside Tents" [level=3] [ref=e206]
+              - generic [ref=e207]:
+                - img [ref=e208]
+                - generic [ref=e210]: "4.4"
+            - paragraph [ref=e211]:
+              - img [ref=e212]
+              - text: Nabeul, Nabeul
+            - generic [ref=e215]:
+              - generic [ref=e216]: Beach Access
+              - generic [ref=e217]: Volleyball
+              - generic [ref=e218]: BBQ
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - generic [ref=e221]: 145 TND
+                - text: /night
+              - generic [ref=e222]:
+                - img [ref=e223]
+                - text: Up to 4
+    - contentinfo [ref=e228]:
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - img "CampyWin" [ref=e233]
+              - generic [ref=e234]: CampyWin
+            - paragraph [ref=e235]: Tunisia's premier platform for camping experiences, outdoor events, and adventure careers.
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - img [ref=e238]
+                - text: Tunis, Tunisia
+              - generic [ref=e241]:
+                - img [ref=e242]
+                - text: hello@campywin.tn
+              - generic [ref=e245]:
+                - img [ref=e246]
+                - text: +216 71 000 000
+          - generic [ref=e248]:
+            - heading "Explore" [level=4] [ref=e249]
+            - list [ref=e250]:
+              - listitem [ref=e251]:
+                - link "Camping Stays" [ref=e252] [cursor=pointer]:
+                  - /url: /accommodations
+              - listitem [ref=e253]:
+                - link "Events" [ref=e254] [cursor=pointer]:
+                  - /url: /events
+              - listitem [ref=e255]:
+                - link "Job Opportunities" [ref=e256] [cursor=pointer]:
+                  - /url: /jobs
+          - generic [ref=e257]:
+            - heading "For Organizers" [level=4] [ref=e258]
+            - list [ref=e259]:
+              - listitem [ref=e260]:
+                - link "List Your Property" [ref=e261] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e262]:
+                - link "Create an Event" [ref=e263] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e264]:
+                - link "Post a Job" [ref=e265] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e266]:
+                - link "Organizer Dashboard" [ref=e267] [cursor=pointer]:
+                  - /url: /dashboard/organizer
+          - generic [ref=e268]:
+            - heading "Company" [level=4] [ref=e269]
+            - list [ref=e270]:
+              - listitem [ref=e271]: About Us
+              - listitem [ref=e272]: Contact
+              - listitem [ref=e273]: Privacy Policy
+              - listitem [ref=e274]: Terms of Service
+        - generic [ref=e275]:
+          - paragraph [ref=e276]: © 2026 CampyWin. All rights reserved.
+          - paragraph [ref=e277]: Built with Next.js 16 · Tailwind CSS · shadcn/ui · Demo Mode
+  - button "Open Next.js Dev Tools" [ref=e283] [cursor=pointer]:
+    - img [ref=e284]

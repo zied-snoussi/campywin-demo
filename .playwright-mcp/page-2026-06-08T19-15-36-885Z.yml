@@ -1,0 +1,226 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "CampyWin CampyWin" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "CampyWin" [ref=e6]
+          - generic [ref=e7]: CampyWin
+        - generic [ref=e8]:
+          - link "Stays" [ref=e9] [cursor=pointer]:
+            - /url: /accommodations
+          - link "Events" [ref=e10] [cursor=pointer]:
+            - /url: /events
+          - link "Jobs" [ref=e11] [cursor=pointer]:
+            - /url: /jobs
+        - generic [ref=e12]:
+          - button [ref=e13]:
+            - img [ref=e14]
+          - button "Sign In" [ref=e16]
+          - button "Get Started" [ref=e17]
+    - generic [ref=e19]:
+      - heading "Outdoor Events & Adventures" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Discover and join curated camping events, workshops, and expeditions across Tunisia
+    - generic [ref=e22]:
+      - generic [ref=e24]:
+        - img [ref=e25]
+        - textbox "Search events..." [ref=e28]
+      - generic [ref=e29]:
+        - button "All" [ref=e30]
+        - button "Festival" [ref=e31]
+        - button "Adventure" [ref=e32]
+        - button "Workshop" [ref=e33]
+      - generic [ref=e34]:
+        - generic [ref=e35] [cursor=pointer]:
+          - generic [ref=e36]:
+            - img "Desert Stargazing Festival" [ref=e37]
+            - generic [ref=e39]:
+              - generic [ref=e40]: UPCOMING
+              - generic [ref=e41]: Festival
+            - paragraph [ref=e43]: Desert Stargazing Festival
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - generic [ref=e46]:
+                - img [ref=e47]
+                - text: Douz, Kebili
+              - generic [ref=e50]:
+                - img [ref=e51]
+                - text: Jul 15
+            - paragraph [ref=e53]: Three nights of celestial wonder in the heart of the Tunisian Sahara. Expert astronomers guide you through the stars.
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e56]:
+                  - img [ref=e57]
+                  - text: 143/200 registered
+                - generic [ref=e62]: 72% full
+              - progressbar [ref=e63]: x
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - generic [ref=e68]: 450 TND
+                - text: /person
+              - generic [ref=e69]:
+                - generic [ref=e70]:
+                  - img [ref=e71]
+                  - text: Astronomy
+                - generic [ref=e74]:
+                  - img [ref=e75]
+                  - text: Desert
+        - generic [ref=e78] [cursor=pointer]:
+          - generic [ref=e79]:
+            - img "Atlas Trek Challenge" [ref=e80]
+            - generic [ref=e82]:
+              - generic [ref=e83]: UPCOMING
+              - generic [ref=e84]: Adventure
+            - paragraph [ref=e86]: Atlas Trek Challenge
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - img [ref=e90]
+                - text: Ain Draham, Jendouba
+              - generic [ref=e93]:
+                - img [ref=e94]
+                - text: Aug 10
+            - paragraph [ref=e96]: A 5-day trekking challenge through the beautiful Kroumirie mountains. All levels welcome.
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - generic [ref=e99]:
+                  - img [ref=e100]
+                  - text: 32/50 registered
+                - generic [ref=e105]: 64% full
+              - progressbar [ref=e106]: x
+            - generic [ref=e109]:
+              - generic [ref=e110]:
+                - generic [ref=e111]: 620 TND
+                - text: /person
+              - generic [ref=e112]:
+                - generic [ref=e113]:
+                  - img [ref=e114]
+                  - text: Hiking
+                - generic [ref=e117]:
+                  - img [ref=e118]
+                  - text: Mountains
+        - generic [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]:
+            - img "Coastal Photography Camp" [ref=e123]
+            - generic [ref=e125]:
+              - generic [ref=e126]: UPCOMING
+              - generic [ref=e127]: Workshop
+            - paragraph [ref=e129]: Coastal Photography Camp
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - img [ref=e133]
+                - text: Tabarka, Jendouba
+              - generic [ref=e136]:
+                - img [ref=e137]
+                - text: Jun 20
+            - paragraph [ref=e139]: Learn landscape and wildlife photography from professional photographers in stunning natural settings.
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - img [ref=e143]
+                  - text: 28/30 registered
+                - generic [ref=e148]: 93% full
+              - progressbar [ref=e149]: x
+            - generic [ref=e152]:
+              - generic [ref=e153]:
+                - generic [ref=e154]: 550 TND
+                - text: /person
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - img [ref=e157]
+                  - text: Photography
+                - generic [ref=e160]:
+                  - img [ref=e161]
+                  - text: Art
+        - generic [ref=e164] [cursor=pointer]:
+          - generic [ref=e165]:
+            - img "Sahara Survival Skills" [ref=e166]
+            - generic [ref=e168]:
+              - generic [ref=e169]: COMPLETED
+              - generic [ref=e170]: Workshop
+            - paragraph [ref=e172]: Sahara Survival Skills
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175]:
+                - img [ref=e176]
+                - text: Matmata, Gabes
+              - generic [ref=e179]:
+                - img [ref=e180]
+                - text: May 1
+            - paragraph [ref=e182]: Master essential desert survival techniques with experienced guides. Fire-making, navigation, water finding and more.
+            - generic [ref=e183]:
+              - generic [ref=e184]:
+                - generic [ref=e185]:
+                  - img [ref=e186]
+                  - text: 25/25 registered
+                - generic [ref=e191]: 100% full
+              - progressbar [ref=e192]: x
+            - generic [ref=e195]:
+              - generic [ref=e196]:
+                - generic [ref=e197]: 380 TND
+                - text: /person
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - img [ref=e200]
+                  - text: Survival
+                - generic [ref=e203]:
+                  - img [ref=e204]
+                  - text: Desert
+    - contentinfo [ref=e207]:
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - img "CampyWin" [ref=e212]
+              - generic [ref=e213]: CampyWin
+            - paragraph [ref=e214]: Tunisia's premier platform for camping experiences, outdoor events, and adventure careers.
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - img [ref=e217]
+                - text: Tunis, Tunisia
+              - generic [ref=e220]:
+                - img [ref=e221]
+                - text: hello@campywin.tn
+              - generic [ref=e224]:
+                - img [ref=e225]
+                - text: +216 71 000 000
+          - generic [ref=e227]:
+            - heading "Explore" [level=4] [ref=e228]
+            - list [ref=e229]:
+              - listitem [ref=e230]:
+                - link "Camping Stays" [ref=e231] [cursor=pointer]:
+                  - /url: /accommodations
+              - listitem [ref=e232]:
+                - link "Events" [ref=e233] [cursor=pointer]:
+                  - /url: /events
+              - listitem [ref=e234]:
+                - link "Job Opportunities" [ref=e235] [cursor=pointer]:
+                  - /url: /jobs
+          - generic [ref=e236]:
+            - heading "For Organizers" [level=4] [ref=e237]
+            - list [ref=e238]:
+              - listitem [ref=e239]:
+                - link "List Your Property" [ref=e240] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e241]:
+                - link "Create an Event" [ref=e242] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e243]:
+                - link "Post a Job" [ref=e244] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e245]:
+                - link "Organizer Dashboard" [ref=e246] [cursor=pointer]:
+                  - /url: /dashboard/organizer
+          - generic [ref=e247]:
+            - heading "Company" [level=4] [ref=e248]
+            - list [ref=e249]:
+              - listitem [ref=e250]: About Us
+              - listitem [ref=e251]: Contact
+              - listitem [ref=e252]: Privacy Policy
+              - listitem [ref=e253]: Terms of Service
+        - generic [ref=e254]:
+          - paragraph [ref=e255]: © 2026 CampyWin. All rights reserved.
+          - paragraph [ref=e256]: Built with Next.js 16 · Tailwind CSS · shadcn/ui · Demo Mode
+  - button "Open Next.js Dev Tools" [ref=e262] [cursor=pointer]:
+    - img [ref=e263]

@@ -1,0 +1,182 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "CampyWin CampyWin" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "CampyWin" [ref=e6]
+          - generic [ref=e7]: CampyWin
+        - generic [ref=e8]:
+          - link "Stays" [ref=e9] [cursor=pointer]:
+            - /url: /accommodations
+          - link "Events" [ref=e10] [cursor=pointer]:
+            - /url: /events
+          - link "Jobs" [ref=e11] [cursor=pointer]:
+            - /url: /jobs
+        - generic [ref=e12]:
+          - button [ref=e13]:
+            - img [ref=e14]
+          - button "Sign In" [ref=e16]
+          - button "Get Started" [ref=e17]
+    - generic [ref=e19]:
+      - heading "Adventure Career Opportunities" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Find your dream job in the outdoor and camping industry across Tunisia
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - img [ref=e24]
+        - textbox "Search jobs, companies, locations..." [ref=e27]
+      - paragraph [ref=e28]: 4 positions available
+      - generic [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]:
+          - generic [ref=e32]: S
+          - heading "Event Coordinator" [level=3] [ref=e33]
+          - paragraph [ref=e34]: Sahara Oasis Camps
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - img [ref=e37]
+              - text: Douz, Tunisia
+            - generic [ref=e40]:
+              - img [ref=e41]
+              - text: Full-time Seasonal
+            - generic [ref=e44]:
+              - img [ref=e45]
+              - text: 24 applicants
+            - generic [ref=e50]:
+              - img [ref=e51]
+              - text: Jun 1
+          - generic [ref=e54]:
+            - generic [ref=e55]: Events
+            - generic [ref=e56]: Coordination
+            - generic [ref=e57]: Leadership
+          - generic [ref=e58]:
+            - generic [ref=e59]: 1,200 – 1,800 TND/mo
+            - button "View Details" [ref=e60]
+        - generic [ref=e61] [cursor=pointer]:
+          - generic [ref=e63]: C
+          - heading "Camp Chef & Catering Lead" [level=3] [ref=e64]
+          - paragraph [ref=e65]: CoastalCamp TN
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - img [ref=e68]
+              - text: Tabarka, Tunisia
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - text: Seasonal
+            - generic [ref=e75]:
+              - img [ref=e76]
+              - text: 18 applicants
+            - generic [ref=e81]:
+              - img [ref=e82]
+              - text: May 28
+          - generic [ref=e85]:
+            - generic [ref=e86]: Cooking
+            - generic [ref=e87]: Catering
+            - generic [ref=e88]: Food Safety
+          - generic [ref=e89]:
+            - generic [ref=e90]: 900 – 1,400 TND/mo
+            - button "View Details" [ref=e91]
+        - generic [ref=e92] [cursor=pointer]:
+          - generic [ref=e94]: M
+          - heading "Wilderness Guide" [level=3] [ref=e95]
+          - paragraph [ref=e96]: Mountain Masters TN
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - text: Ain Draham, Tunisia
+            - generic [ref=e102]:
+              - img [ref=e103]
+              - text: Part-time Flexible
+            - generic [ref=e106]:
+              - img [ref=e107]
+              - text: 11 applicants
+            - generic [ref=e112]:
+              - img [ref=e113]
+              - text: Jun 5
+          - generic [ref=e116]:
+            - generic [ref=e117]: Guiding
+            - generic [ref=e118]: Nature
+            - generic [ref=e119]: Safety
+          - generic [ref=e120]:
+            - generic [ref=e121]: 600 – 1,000 TND/mo
+            - button "View Details" [ref=e122]
+        - generic [ref=e123] [cursor=pointer]:
+          - generic [ref=e125]: D
+          - heading "Equipment Manager" [level=3] [ref=e126]
+          - paragraph [ref=e127]: Desert Explorers
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - img [ref=e130]
+              - text: Gabes, Tunisia
+            - generic [ref=e133]:
+              - img [ref=e134]
+              - text: Full-time
+            - generic [ref=e137]:
+              - img [ref=e138]
+              - text: 9 applicants
+            - generic [ref=e143]:
+              - img [ref=e144]
+              - text: May 20
+          - generic [ref=e147]:
+            - generic [ref=e148]: Equipment
+            - generic [ref=e149]: Inventory
+            - generic [ref=e150]: Logistics
+          - generic [ref=e151]:
+            - generic [ref=e152]: 1,000 – 1,500 TND/mo
+            - button "View Details" [ref=e153]
+    - contentinfo [ref=e154]:
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - img "CampyWin" [ref=e159]
+              - generic [ref=e160]: CampyWin
+            - paragraph [ref=e161]: Tunisia's premier platform for camping experiences, outdoor events, and adventure careers.
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - img [ref=e164]
+                - text: Tunis, Tunisia
+              - generic [ref=e167]:
+                - img [ref=e168]
+                - text: hello@campywin.tn
+              - generic [ref=e171]:
+                - img [ref=e172]
+                - text: +216 71 000 000
+          - generic [ref=e174]:
+            - heading "Explore" [level=4] [ref=e175]
+            - list [ref=e176]:
+              - listitem [ref=e177]:
+                - link "Camping Stays" [ref=e178] [cursor=pointer]:
+                  - /url: /accommodations
+              - listitem [ref=e179]:
+                - link "Events" [ref=e180] [cursor=pointer]:
+                  - /url: /events
+              - listitem [ref=e181]:
+                - link "Job Opportunities" [ref=e182] [cursor=pointer]:
+                  - /url: /jobs
+          - generic [ref=e183]:
+            - heading "For Organizers" [level=4] [ref=e184]
+            - list [ref=e185]:
+              - listitem [ref=e186]:
+                - link "List Your Property" [ref=e187] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e188]:
+                - link "Create an Event" [ref=e189] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e190]:
+                - link "Post a Job" [ref=e191] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=e192]:
+                - link "Organizer Dashboard" [ref=e193] [cursor=pointer]:
+                  - /url: /dashboard/organizer
+          - generic [ref=e194]:
+            - heading "Company" [level=4] [ref=e195]
+            - list [ref=e196]:
+              - listitem [ref=e197]: About Us
+              - listitem [ref=e198]: Contact
+              - listitem [ref=e199]: Privacy Policy
+              - listitem [ref=e200]: Terms of Service
+        - generic [ref=e201]:
+          - paragraph [ref=e202]: © 2026 CampyWin. All rights reserved.
+          - paragraph [ref=e203]: Built with Next.js 16 · Tailwind CSS · shadcn/ui · Demo Mode
+  - button "Open Next.js Dev Tools" [ref=e209] [cursor=pointer]:
+    - img [ref=e210]

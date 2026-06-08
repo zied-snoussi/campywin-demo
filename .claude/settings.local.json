@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Head *)",
+      "Skill(update-config)"
+    ]
+  }
+}

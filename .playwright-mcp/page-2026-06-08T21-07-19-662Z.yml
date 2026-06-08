@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - img "Camping" [ref=e4]
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - img "CampyWin" [ref=e8]
+          - generic [ref=e9]: CampyWin
+        - heading "Your Adventure Awaits Outside" [level=2] [ref=e10]:
+          - text: Your Adventure
+          - text: Awaits Outside
+        - paragraph [ref=e11]: Join thousands exploring Tunisia's breathtaking landscapes, from Sahara dunes to Mediterranean coasts.
+    - generic [ref=e13]:
+      - heading "Welcome back" [level=1] [ref=e14]
+      - paragraph [ref=e15]: "This is a demo app. Pick a role to explore the platform:"
+      - generic [ref=e16]:
+        - button "Adventurer (Client) Browse stays, book events, apply for jobs" [ref=e17]:
+          - img [ref=e19]
+          - generic [ref=e23]:
+            - paragraph [ref=e24]: Adventurer (Client)
+            - paragraph [ref=e25]: Browse stays, book events, apply for jobs
+        - button "Camp Organizer Manage events, stays, equipment & hiring" [ref=e26]:
+          - img [ref=e28]
+          - generic [ref=e33]:
+            - paragraph [ref=e34]: Camp Organizer
+            - paragraph [ref=e35]: Manage events, stays, equipment & hiring
+        - button "Platform Admin Full control — users, analytics, moderation" [ref=e36]:
+          - img [ref=e38]
+          - generic [ref=e43]:
+            - paragraph [ref=e44]: Platform Admin
+            - paragraph [ref=e45]: Full control — users, analytics, moderation
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: Demo Mode Active
+        - paragraph [ref=e48]: No real authentication required. All data is mocked for demonstration.
+      - button "Back to home" [ref=e49]
+  - button "Open Next.js Dev Tools" [ref=e55] [cursor=pointer]:
+    - img [ref=e56]
+  - alert [ref=e59]
