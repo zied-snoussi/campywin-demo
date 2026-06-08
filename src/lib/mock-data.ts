@@ -368,6 +368,57 @@ export const MY_APPLICATIONS: Application[] = [
   },
 ];
 
+// ── Forum ──────────────────────────────────────────────────────────────────
+export interface ForumPost {
+  id: string;
+  title: string;
+  body: string;
+  author: string;
+  authorInitial: string;
+  authorRole: 'CLIENT' | 'ORGANISATEUR' | 'ADMIN';
+  category: string;
+  tags: string[];
+  likes: number;
+  comments: number;
+  createdAt: string;
+  pinned?: boolean;
+}
+
+export const FORUM_CATEGORIES = ['All', 'Camping Tips', 'Trip Planning', 'Equipment', 'Jobs & Careers', 'Events', 'General'];
+
+export const FORUM_POSTS: ForumPost[] = [
+  { id: 'f1', title: 'Best camping spots in the Sahara — 2026 guide', body: 'After 3 trips to Douz and surrounding dunes, here are my top picks for off-grid campsites with facilities...', author: 'Karim B.', authorInitial: 'K', authorRole: 'CLIENT', category: 'Camping Tips', tags: ['sahara', 'douz', 'guide'], likes: 84, comments: 23, createdAt: '2026-06-01', pinned: true },
+  { id: 'f2', title: 'How do I get my equipment rental deposit back?', body: 'Rented a Coleman tent for the Atlas trip and still waiting on my 150 TND deposit after 2 weeks. Anyone else had this issue?', author: 'Lina M.', authorInitial: 'L', authorRole: 'CLIENT', category: 'Equipment', tags: ['rental', 'deposit', 'help'], likes: 12, comments: 8, createdAt: '2026-06-03' },
+  { id: 'f3', title: 'Looking for carpool to Tabarka festival (June 20)', body: 'I have 3 seats available leaving from Tunis Centrale at 7am on June 20. Sharing fuel costs ~25 TND each.', author: 'Youssef T.', authorInitial: 'Y', authorRole: 'CLIENT', category: 'Trip Planning', tags: ['carpool', 'tabarka', 'festival'], likes: 31, comments: 14, createdAt: '2026-06-05' },
+  { id: 'f4', title: 'We are hiring: 2 wilderness guides for summer season', body: 'CampyWin partner Sahara Expeditions is looking for experienced guides with WAFA certification. Competitive salary + accommodation included.', author: 'Admin Team', authorInitial: 'A', authorRole: 'ADMIN', category: 'Jobs & Careers', tags: ['hiring', 'guide', 'sahara'], likes: 56, comments: 19, createdAt: '2026-06-04' },
+  { id: 'f5', title: 'Desert Stargazing Festival — what to expect?', body: 'First time attending the Douz festival this year. What should I pack? Any tips from veterans?', author: 'Amira S.', authorInitial: 'A', authorRole: 'CLIENT', category: 'Events', tags: ['stargazing', 'douz', 'festival', 'tips'], likes: 47, comments: 31, createdAt: '2026-05-28' },
+  { id: 'f6', title: 'Review: MSR Hubba Hubba tent for solo Atlas trips', body: 'After 4 nights in the Chaambi mountains, here is my honest review of this tent...', author: 'Sami R.', authorInitial: 'S', authorRole: 'CLIENT', category: 'Equipment', tags: ['tent', 'review', 'atlas'], likes: 38, comments: 11, createdAt: '2026-05-25' },
+  { id: 'f7', title: 'General travel safety tips for Tunisian backcountry', body: 'Always tell someone your route, carry extra water (4L/day minimum in summer), and download offline maps before you lose signal.', author: 'Rania H.', authorInitial: 'R', authorRole: 'ORGANISATEUR', category: 'Camping Tips', tags: ['safety', 'tips', 'backcountry'], likes: 92, comments: 27, createdAt: '2026-05-20' },
+  { id: 'f8', title: 'Cap Bon glamping — worth the price?', body: 'Just got back from a 3-night glamping stay at the Cap Bon Eco Lodge. TL;DR: yes, totally worth 280 TND/night if you want comfort with nature.', author: 'Nour K.', authorInitial: 'N', authorRole: 'CLIENT', category: 'Camping Tips', tags: ['glamping', 'capbon', 'review'], likes: 61, comments: 16, createdAt: '2026-06-02' },
+];
+
+// ── Support Tickets ─────────────────────────────────────────────────────────
+export type TicketPriority = 'LOW' | 'NORMAL' | 'HIGH' | 'URGENT';
+export type TicketStatus = 'OPEN' | 'IN_PROGRESS' | 'WAITING_USER' | 'RESOLVED' | 'CLOSED';
+
+export interface SupportTicket {
+  id: string;
+  subject: string;
+  description: string;
+  priority: TicketPriority;
+  status: TicketStatus;
+  createdAt: string;
+  resolvedAt?: string;
+}
+
+export const SUPPORT_TICKETS: SupportTicket[] = [
+  { id: 't1', subject: 'Deposit not refunded after tent rental', description: 'I returned the Coleman tent on May 15 and still have not received my 150 TND deposit. Order #8821.', priority: 'HIGH', status: 'IN_PROGRESS', createdAt: '2026-05-17' },
+  { id: 't2', subject: 'Cannot upload profile photo', description: 'Every time I try to upload a JPEG under 2MB I get a "file type not supported" error.', priority: 'NORMAL', status: 'RESOLVED', createdAt: '2026-05-10', resolvedAt: '2026-05-13' },
+  { id: 't3', subject: 'Wrong dates on confirmed booking', description: 'My booking confirmation shows check-in June 10 but I booked June 15. Booking ID: BK-4492.', priority: 'URGENT', status: 'OPEN', createdAt: '2026-06-07' },
+  { id: 't4', subject: 'Event registration not showing', description: 'I paid for the Stargazing Festival but it does not appear in My Bookings.', priority: 'HIGH', status: 'WAITING_USER', createdAt: '2026-06-03' },
+  { id: 't5', subject: 'General question about cancellation policy', description: 'Can I cancel a confirmed glamping booking 72 hours before check-in and still get a refund?', priority: 'LOW', status: 'CLOSED', createdAt: '2026-05-01', resolvedAt: '2026-05-02' },
+];
+
 export const ADMIN_STATS = {
   totalUsers: 2847,
   totalOrganizers: 134,

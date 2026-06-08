@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ChevronDown } from 'lucide-react';
+import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ChevronDown, Calendar, BookOpen, User, MessageSquare } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { CaptainChatbot } from '@/components/captain/captain-chatbot';
 
@@ -43,11 +43,11 @@ const INIT_MSG: Msg = {
 /* ── nav items (excluding Captain center) ── */
 const LEFT_NAV = [
   { label: 'Home', href: '/dashboard/client', icon: Home },
-  { label: 'Stay', href: '/accommodations', icon: MapPin },
+  { label: 'Stay', href: '/dashboard/client/stays', icon: MapPin },
 ];
 const RIGHT_NAV = [
-  { label: 'Jobs', href: '/jobs', icon: Briefcase },
-  { label: 'Help', href: '/', icon: HelpCircle },
+  { label: 'Careers', href: '/dashboard/client/careers', icon: Briefcase },
+  { label: 'Help', href: '/dashboard/client/support', icon: HelpCircle },
 ];
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -151,10 +151,19 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
                     <p className="text-xs text-gray-400 truncate">{user?.email}</p>
                   </div>
                   <nav className="py-1">
-                    <Link href="/dashboard/client" onClick={() => setProfileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                      <Home className="w-4 h-4" /> Dashboard
-                    </Link>
+                    {[
+                      { href: '/dashboard/client', icon: Home, label: 'Dashboard' },
+                      { href: '/dashboard/client/profile', icon: User, label: 'My Profile' },
+                      { href: '/dashboard/client/bookings', icon: BookOpen, label: 'My Bookings' },
+                      { href: '/dashboard/client/applications', icon: Briefcase, label: 'Applications' },
+                      { href: '/dashboard/client/events', icon: Calendar, label: 'Events' },
+                      { href: '/dashboard/client/forum', icon: MessageSquare, label: 'Forum' },
+                    ].map(({ href, icon: Icon, label }) => (
+                      <Link key={href} href={href} onClick={() => setProfileOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <Icon className="w-4 h-4 text-gray-400" /> {label}
+                      </Link>
+                    ))}
                     <div className="h-px bg-gray-100 dark:bg-gray-700 my-1" />
                     <button onClick={handleLogout}
                       className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
@@ -230,7 +239,9 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               {messages.map(msg => (
                 <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'items-end gap-2'}`}>
                   {msg.role === 'captain' && (
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-sm flex-shrink-0 shadow">🏕️</div>
+                    <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 shadow">
+                      <Image src="/avatar-captain.png" alt="Captain" width={32} height={32} className="w-full h-full object-cover" />
+                    </div>
                   )}
                   <div className={`max-w-[80%] flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                     <div className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
@@ -246,7 +257,9 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               ))}
               {typing && (
                 <div className="flex items-end gap-2">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-sm shadow">🏕️</div>
+                  <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 shadow">
+                    <Image src="/avatar-captain.png" alt="Captain" width={32} height={32} className="w-full h-full object-cover" />
+                  </div>
                   <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl rounded-bl-none px-4 py-3 shadow-sm">
                     <div className="flex gap-1">
                       {[0, 1, 2].map(i => (
