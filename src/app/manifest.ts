@@ -15,32 +15,28 @@ export default function manifest(): MetadataRoute.Manifest {
     categories:       ['travel', 'lifestyle', 'outdoor', 'sports'],
     icons: [
       {
-        src:     '/logo-campy-win-green-realistic.png',
+        src:     '/apple-touch-icon.png',
+        sizes:   '180x180',
+        type:    'image/png',
+        purpose: 'any',
+      },
+      {
+        src:     '/icon-192.png',
         sizes:   '192x192',
         type:    'image/png',
         purpose: 'any',
       },
       {
-        src:     '/logo-campy-win-green-realistic.png',
+        src:     '/icon-512.png',
         sizes:   '512x512',
         type:    'image/png',
         purpose: 'any',
       },
       {
-        src:     '/logo-campy-win-green-realistic.png',
+        src:     '/icon-512.png',
         sizes:   '512x512',
         type:    'image/png',
         purpose: 'maskable',
-      },
-    ],
-    screenshots: [
-      {
-        src:   '/logo-campy-win-green-realistic.png',
-        sizes: '1080x1920',
-        type:  'image/png',
-        // @ts-ignore — form_factor is valid but may not be in older TS types
-        form_factor: 'narrow',
-        label: 'CampyWin mobile home screen',
       },
     ],
     shortcuts: [
@@ -49,28 +45,28 @@ export default function manifest(): MetadataRoute.Manifest {
         short_name:  'Séjours',
         url:         '/accommodations',
         description: 'Parcourir les hébergements camping',
-        icons:       [{ src: '/logo-campy-win-green-realistic.png', sizes: '96x96' }],
+        icons:       [{ src: '/icon-192.png', sizes: '192x192' }],
       },
       {
         name:        'Événements',
         short_name:  'Événements',
         url:         '/events',
         description: 'Découvrir les événements outdoor',
-        icons:       [{ src: '/logo-campy-win-green-realistic.png', sizes: '96x96' }],
+        icons:       [{ src: '/icon-192.png', sizes: '192x192' }],
       },
       {
         name:        'Emplois',
         short_name:  'Emplois',
         url:         '/jobs',
         description: 'Trouver un emploi outdoor',
-        icons:       [{ src: '/logo-campy-win-green-realistic.png', sizes: '96x96' }],
+        icons:       [{ src: '/icon-192.png', sizes: '192x192' }],
       },
       {
         name:        'Transport',
         short_name:  'Transport',
         url:         '/dashboard/client/transport',
         description: 'Covoiturage vers les spots camping',
-        icons:       [{ src: '/logo-campy-win-green-realistic.png', sizes: '96x96' }],
+        icons:       [{ src: '/icon-192.png', sizes: '192x192' }],
       },
     ],
   };

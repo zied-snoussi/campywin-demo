@@ -6,15 +6,15 @@ import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, 
 
 const NAV = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package,
@@ -15,23 +15,23 @@ import { Label } from '@/components/ui/label';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
 const SECURITY_CHECKS = [
-  { label: 'JWT Authentication', detail: 'HS256 / RS256 — 1h expiry', status: 'ACTIVE', ok: true },
+  { label: 'JWT Authentication', detail: 'HS256 / RS256 â€” 1h expiry', status: 'ACTIVE', ok: true },
   { label: 'Role-Based Access Control (RBAC)', detail: 'CLIENT / ORGANISATEUR / ADMIN', status: 'ACTIVE', ok: true },
   { label: 'Data Encryption (AES-256)', detail: 'At rest and in transit (TLS 1.3)', status: 'ACTIVE', ok: true },
-  { label: 'Rate Limiting', detail: '100 req/min per IP · burst 200', status: 'ACTIVE', ok: true },
+  { label: 'Rate Limiting', detail: '100 req/min per IP Â· burst 200', status: 'ACTIVE', ok: true },
   { label: 'Audit Logging', detail: 'All admin actions logged with timestamp', status: 'ACTIVE', ok: true },
 ];
 
@@ -166,7 +166,7 @@ export default function AdminSettingsPage() {
                     <Toggle checked={twoFA} onChange={setTwoFA} />
                   </div>
                   <Badge variant="outline" className={`mt-3 text-xs ${twoFA ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}`}>
-                    {twoFA ? 'Enabled — admins must use authenticator app' : 'Disabled — reduced security posture'}
+                    {twoFA ? 'Enabled â€” admins must use authenticator app' : 'Disabled â€” reduced security posture'}
                   </Badge>
                 </CardContent>
               </Card>
@@ -211,7 +211,7 @@ export default function AdminSettingsPage() {
                       <ev.icon className="w-4 h-4 text-gray-400 mt-0.5 shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-medium text-gray-900 dark:text-white">{ev.event}</p>
-                        <p className="text-[10px] text-gray-400">{ev.user} · {ev.time}</p>
+                        <p className="text-[10px] text-gray-400">{ev.user} Â· {ev.time}</p>
                       </div>
                       {severityBadge(ev.severity)}
                     </div>
@@ -286,7 +286,7 @@ export default function AdminSettingsPage() {
                 </div>
                 {platform.maintenanceMode && (
                   <Badge variant="outline" className="bg-amber-50 text-amber-700 text-xs">
-                    Warning: Platform is in maintenance mode — users cannot access the site
+                    Warning: Platform is in maintenance mode â€” users cannot access the site
                   </Badge>
                 )}
               </CardContent>
@@ -356,3 +356,4 @@ export default function AdminSettingsPage() {
     </DashboardLayout>
   );
 }
+

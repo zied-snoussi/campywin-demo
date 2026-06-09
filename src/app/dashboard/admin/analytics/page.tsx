@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import {
   LayoutDashboard, Users, Building2, Tent, Package,
   Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings,
@@ -13,15 +13,15 @@ import { ACCOMMODATIONS } from '@/lib/mock-data';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
@@ -72,14 +72,14 @@ export default function AdminAnalyticsPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Platform Analytics</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">June 2026 — real-time overview</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">June 2026 â€” real-time overview</p>
         </div>
         <Button variant="outline" className="gap-2 h-9 text-sm">
           <Download className="w-4 h-4" /> Export Report
         </Button>
       </div>
 
-      {/* KPI Cards — Row 1 */}
+      {/* KPI Cards â€” Row 1 */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
         {KPI_CARDS.slice(0, 3).map(({ label, value, change, up, icon: Icon, color }) => (
           <Card key={label}>
@@ -93,14 +93,14 @@ export default function AdminAnalyticsPage() {
                 variant="outline"
                 className={up ? 'bg-emerald-50 text-emerald-700 text-[10px]' : 'bg-red-50 text-red-600 text-[10px]'}
               >
-                {up ? '▲' : '▼'} {change} vs last month
+                {up ? 'â–²' : 'â–¼'} {change} vs last month
               </Badge>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      {/* KPI Cards — Row 2 */}
+      {/* KPI Cards â€” Row 2 */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
         {KPI_CARDS.slice(3).map(({ label, value, change, up, icon: Icon, color }) => (
           <Card key={label}>
@@ -114,7 +114,7 @@ export default function AdminAnalyticsPage() {
                 variant="outline"
                 className={up ? 'bg-emerald-50 text-emerald-700 text-[10px]' : 'bg-red-50 text-red-600 text-[10px]'}
               >
-                {up ? '▲' : '▼'} {change} vs last month
+                {up ? 'â–²' : 'â–¼'} {change} vs last month
               </Badge>
             </CardContent>
           </Card>
@@ -220,7 +220,7 @@ export default function AdminAnalyticsPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{acc.title}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{acc.location} · {acc.bookings} bookings</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{acc.location} Â· {acc.bookings} bookings</p>
                   </div>
                   <div className="text-right shrink-0">
                     <p className="text-sm font-bold text-emerald-600">{acc.revenue.toLocaleString()} TND</p>
@@ -238,3 +238,4 @@ export default function AdminAnalyticsPage() {
     </DashboardLayout>
   );
 }
+

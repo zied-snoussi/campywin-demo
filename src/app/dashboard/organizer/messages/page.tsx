@@ -2,16 +2,17 @@
 import { DashboardLayout } from '@/components/layout/dashboard-layout';
 import { MessagesUI } from '@/components/messages/messages-ui';
 import { ORGANIZER_CONVERSATIONS } from '@/lib/mock-data';
-import { Home, Calendar, MapPin, Briefcase, Package, BarChart3, Mail } from 'lucide-react';
+import { LayoutDashboard, Calendar, MapPin, Briefcase, Package, Car, BarChart3, Mail } from 'lucide-react';
 
 const NAV = [
-  { label: 'Overview',        href: '/dashboard/organizer',          icon: Home },
-  { label: 'My Events',       href: '/dashboard/organizer',          icon: Calendar },
-  { label: 'Accommodations',  href: '/dashboard/organizer',          icon: MapPin },
-  { label: 'Job Offers',      href: '/dashboard/organizer',          icon: Briefcase },
-  { label: 'Equipment',       href: '/dashboard/organizer',          icon: Package },
-  { label: 'Messages',        href: '/dashboard/organizer/messages', icon: Mail },
-  { label: 'Analytics',       href: '/dashboard/organizer',          icon: BarChart3 },
+  { label: 'Overview',       href: '/dashboard/organizer',               icon: LayoutDashboard },
+  { label: 'My Events',      href: '/dashboard/organizer/events',        icon: Calendar,    section: 'Operations' },
+  { label: 'Accommodations', href: '/dashboard/organizer/accommodations',icon: MapPin },
+  { label: 'Job Offers',     href: '/dashboard/organizer/jobs',          icon: Briefcase },
+  { label: 'Equipment',      href: '/dashboard/organizer/equipment',     icon: Package },
+  { label: 'Transport',      href: '/dashboard/organizer/transport',     icon: Car },
+  { label: 'Analytics',      href: '/dashboard/organizer/analytics',     icon: BarChart3,   section: 'Insights' },
+  { label: 'Messages',       href: '/dashboard/organizer/messages',      icon: Mail,        section: 'Comms' },
 ];
 
 export default function OrganizerMessagesPage() {

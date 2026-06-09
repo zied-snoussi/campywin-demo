@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package,
@@ -12,15 +12,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
@@ -47,12 +47,12 @@ interface Candidature {
 }
 
 const INITIAL_OFFERS: JobOfferItem[] = [
-  { id: '1', title: 'Event Coordinator', organization: 'Sahara Oasis Camps', location: 'Douz, Tunisia', type: 'Seasonal', salaryRange: '1,200–1,800 TND/mo', applicants: 24, status: 'ACTIVE' },
-  { id: '2', title: 'Camp Chef & Catering Lead', organization: 'Atlas Mountain Eco Lodge', location: 'Ain Draham, Tunisia', type: 'Full-time', salaryRange: '1,500–2,200 TND/mo', applicants: 11, status: 'ACTIVE' },
-  { id: '3', title: 'Outdoor Activities Guide', organization: 'Desert Explorers', location: 'Matmata, Tunisia', type: 'Seasonal', salaryRange: '900–1,300 TND/mo', applicants: 37, status: 'ACTIVE' },
-  { id: '4', title: 'Social Media Manager', organization: 'CoastalCamp TN', location: 'Tabarka, Tunisia', type: 'Part-time', salaryRange: '800–1,100 TND/mo', applicants: 19, status: 'CLOSED' },
-  { id: '5', title: 'Safety & First Aid Officer', organization: 'Oasis Stays', location: 'Tozeur, Tunisia', type: 'Full-time', salaryRange: '1,800–2,500 TND/mo', applicants: 8, status: 'DRAFT' },
-  { id: '6', title: 'Booking & Guest Relations', organization: 'CapBon Adventures', location: 'Nabeul, Tunisia', type: 'Full-time', salaryRange: '1,100–1,600 TND/mo', applicants: 15, status: 'ACTIVE' },
+  { id: '1', title: 'Event Coordinator', organization: 'Sahara Oasis Camps', location: 'Douz, Tunisia', type: 'Seasonal', salaryRange: '1,200â€“1,800 TND/mo', applicants: 24, status: 'ACTIVE' },
+  { id: '2', title: 'Camp Chef & Catering Lead', organization: 'Atlas Mountain Eco Lodge', location: 'Ain Draham, Tunisia', type: 'Full-time', salaryRange: '1,500â€“2,200 TND/mo', applicants: 11, status: 'ACTIVE' },
+  { id: '3', title: 'Outdoor Activities Guide', organization: 'Desert Explorers', location: 'Matmata, Tunisia', type: 'Seasonal', salaryRange: '900â€“1,300 TND/mo', applicants: 37, status: 'ACTIVE' },
+  { id: '4', title: 'Social Media Manager', organization: 'CoastalCamp TN', location: 'Tabarka, Tunisia', type: 'Part-time', salaryRange: '800â€“1,100 TND/mo', applicants: 19, status: 'CLOSED' },
+  { id: '5', title: 'Safety & First Aid Officer', organization: 'Oasis Stays', location: 'Tozeur, Tunisia', type: 'Full-time', salaryRange: '1,800â€“2,500 TND/mo', applicants: 8, status: 'DRAFT' },
+  { id: '6', title: 'Booking & Guest Relations', organization: 'CapBon Adventures', location: 'Nabeul, Tunisia', type: 'Full-time', salaryRange: '1,100â€“1,600 TND/mo', applicants: 15, status: 'ACTIVE' },
 ];
 
 const INITIAL_CANDIDATURES: Candidature[] = [
@@ -223,3 +223,4 @@ export default function AdminJobsPage() {
     </DashboardLayout>
   );
 }
+

@@ -1,7 +1,7 @@
-'use client';
+﻿'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Home, Calendar, MapPin, Briefcase, Package, BarChart3, Plus, Users, TrendingUp, Star } from 'lucide-react';
+import { LayoutDashboard, Calendar, MapPin, Briefcase, Package, BarChart3, Car, Mail, Plus, Users, TrendingUp, Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,12 +12,14 @@ import { useStore } from '@/lib/store';
 import { EVENTS, JOB_OFFERS, ACCOMMODATIONS, ORGANIZER_STATS } from '@/lib/mock-data';
 
 const NAV = [
-  { label: 'Overview', href: '/dashboard/organizer', icon: Home },
-  { label: 'My Events', href: '/dashboard/organizer', icon: Calendar },
-  { label: 'Accommodations', href: '/dashboard/organizer', icon: MapPin },
-  { label: 'Job Offers', href: '/dashboard/organizer', icon: Briefcase },
-  { label: 'Equipment', href: '/dashboard/organizer', icon: Package },
-  { label: 'Analytics', href: '/dashboard/organizer', icon: BarChart3 },
+  { label: 'Overview',       href: '/dashboard/organizer',               icon: LayoutDashboard },
+  { label: 'My Events',      href: '/dashboard/organizer/events',        icon: Calendar,    section: 'Operations' },
+  { label: 'Accommodations', href: '/dashboard/organizer/accommodations',icon: MapPin },
+  { label: 'Job Offers',     href: '/dashboard/organizer/jobs',          icon: Briefcase },
+  { label: 'Equipment',      href: '/dashboard/organizer/equipment',     icon: Package },
+  { label: 'Transport',      href: '/dashboard/organizer/transport',     icon: Car },
+  { label: 'Analytics',      href: '/dashboard/organizer/analytics',     icon: BarChart3,   section: 'Insights' },
+  { label: 'Messages',       href: '/dashboard/organizer/messages',      icon: Mail,        section: 'Comms' },
 ];
 
 const MOCK_EQUIPMENT = [
@@ -55,14 +57,14 @@ export default function OrganizerDashboard() {
         <TabsContent value="overview">
           {/* Welcome banner */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-6 text-white mb-8">
-            <h2 className="text-2xl font-black mb-1">Good day, {user.name.split(' ')[0]}! 🌿</h2>
+            <h2 className="text-2xl font-black mb-1">Good day, {user.name.split(' ')[0]}! ðŸŒ¿</h2>
             <p className="text-purple-100 mb-5">Here's your operations summary for today.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: 'Active Events', value: ORGANIZER_STATS.totalEvents },
                 { label: 'Active Bookings', value: ORGANIZER_STATS.activeBookings },
                 { label: 'Revenue (TND)', value: `${ORGANIZER_STATS.totalRevenue.toLocaleString()}` },
-                { label: 'Avg. Rating', value: `${ORGANIZER_STATS.avgRating}★` },
+                { label: 'Avg. Rating', value: `${ORGANIZER_STATS.avgRating}â˜…` },
               ].map(({ label, value }) => (
                 <div key={label} className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
                   <p className="text-2xl font-black">{value}</p>
@@ -280,3 +282,4 @@ export default function OrganizerDashboard() {
     </DashboardLayout>
   );
 }
+

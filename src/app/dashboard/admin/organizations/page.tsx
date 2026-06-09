@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package, Briefcase,
@@ -14,15 +14,15 @@ import { DashboardLayout } from '@/components/layout/dashboard-layout';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
@@ -125,7 +125,7 @@ export default function AdminOrganizationsPage() {
             <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{o.rating}</span>
           </div>
         ) : (
-          <span className="text-xs text-gray-400">—</span>
+          <span className="text-xs text-gray-400">â€”</span>
         )}
       </td>
       <td className="py-3 px-4">
@@ -173,7 +173,7 @@ export default function AdminOrganizationsPage() {
   );
 
   return (
-    <DashboardLayout navItems={NAV_ADMIN} title="Admin — Organizations">
+    <DashboardLayout navItems={NAV_ADMIN} title="Admin â€” Organizations">
       {/* Page header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
@@ -318,3 +318,4 @@ export default function AdminOrganizationsPage() {
     </DashboardLayout>
   );
 }
+

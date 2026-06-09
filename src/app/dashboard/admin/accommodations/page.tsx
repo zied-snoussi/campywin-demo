@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package, Briefcase,
@@ -14,15 +14,15 @@ import { ACCOMMODATIONS } from '@/lib/mock-data';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
@@ -37,12 +37,12 @@ interface AccomType {
 }
 
 const ACCOM_TYPES: AccomType[] = [
-  { id: 't1', emoji: '✨', name: 'Glamping',     description: 'Luxury tents with premium amenities and comfort in nature.',          count: 12, color: 'text-purple-600 dark:text-purple-400', bgColor: 'bg-purple-50 dark:bg-purple-900/20' },
-  { id: 't2', emoji: '🌿', name: 'Eco Lodge',    description: 'Sustainable lodges built with eco-friendly materials and practices.',  count: 8,  color: 'text-emerald-600 dark:text-emerald-400', bgColor: 'bg-emerald-50 dark:bg-emerald-900/20' },
-  { id: 't3', emoji: '🏖️', name: 'Beach Camp',   description: 'Coastal camping spots with direct beach and sea access.',            count: 9,  color: 'text-cyan-600 dark:text-cyan-400', bgColor: 'bg-cyan-50 dark:bg-cyan-900/20' },
-  { id: 't4', emoji: '🦁', name: 'Safari',       description: 'Desert and wildlife-focused guided camping experiences.',             count: 5,  color: 'text-amber-600 dark:text-amber-400', bgColor: 'bg-amber-50 dark:bg-amber-900/20' },
-  { id: 't5', emoji: '🌳', name: 'Treehouse',    description: 'Elevated stays in the forest canopy for a unique perspective.',       count: 3,  color: 'text-lime-600 dark:text-lime-400', bgColor: 'bg-lime-50 dark:bg-lime-900/20' },
-  { id: 't6', emoji: '🏜️', name: 'Desert Camp',  description: 'Traditional Berber-style camps under the stars in the Sahara.',     count: 7,  color: 'text-orange-600 dark:text-orange-400', bgColor: 'bg-orange-50 dark:bg-orange-900/20' },
+  { id: 't1', emoji: 'âœ¨', name: 'Glamping',     description: 'Luxury tents with premium amenities and comfort in nature.',          count: 12, color: 'text-purple-600 dark:text-purple-400', bgColor: 'bg-purple-50 dark:bg-purple-900/20' },
+  { id: 't2', emoji: 'ðŸŒ¿', name: 'Eco Lodge',    description: 'Sustainable lodges built with eco-friendly materials and practices.',  count: 8,  color: 'text-emerald-600 dark:text-emerald-400', bgColor: 'bg-emerald-50 dark:bg-emerald-900/20' },
+  { id: 't3', emoji: 'ðŸ–ï¸', name: 'Beach Camp',   description: 'Coastal camping spots with direct beach and sea access.',            count: 9,  color: 'text-cyan-600 dark:text-cyan-400', bgColor: 'bg-cyan-50 dark:bg-cyan-900/20' },
+  { id: 't4', emoji: 'ðŸ¦', name: 'Safari',       description: 'Desert and wildlife-focused guided camping experiences.',             count: 5,  color: 'text-amber-600 dark:text-amber-400', bgColor: 'bg-amber-50 dark:bg-amber-900/20' },
+  { id: 't5', emoji: 'ðŸŒ³', name: 'Treehouse',    description: 'Elevated stays in the forest canopy for a unique perspective.',       count: 3,  color: 'text-lime-600 dark:text-lime-400', bgColor: 'bg-lime-50 dark:bg-lime-900/20' },
+  { id: 't6', emoji: 'ðŸœï¸', name: 'Desert Camp',  description: 'Traditional Berber-style camps under the stars in the Sahara.',     count: 7,  color: 'text-orange-600 dark:text-orange-400', bgColor: 'bg-orange-50 dark:bg-orange-900/20' },
 ];
 
 interface SpotState {
@@ -65,7 +65,7 @@ export default function AdminAccommodationsPage() {
   };
 
   return (
-    <DashboardLayout navItems={NAV_ADMIN} title="Admin — Accommodations">
+    <DashboardLayout navItems={NAV_ADMIN} title="Admin â€” Accommodations">
       {/* Page header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
@@ -80,7 +80,7 @@ export default function AdminAccommodationsPage() {
           <TabsTrigger value="spots">Camping Spots</TabsTrigger>
         </TabsList>
 
-        {/* ── Types tab ── */}
+        {/* â”€â”€ Types tab â”€â”€ */}
         <TabsContent value="types">
           <div className="flex justify-end mb-4">
             <Button className="h-9 text-sm gap-2 bg-emerald-600 hover:bg-emerald-700 text-white">
@@ -129,7 +129,7 @@ export default function AdminAccommodationsPage() {
           </div>
         </TabsContent>
 
-        {/* ── Spots tab ── */}
+        {/* â”€â”€ Spots tab â”€â”€ */}
         <TabsContent value="spots">
           <div className="flex justify-end mb-4">
             <Button className="h-9 text-sm gap-2 bg-emerald-600 hover:bg-emerald-700 text-white">
@@ -242,3 +242,4 @@ export default function AdminAccommodationsPage() {
     </DashboardLayout>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package,
@@ -12,15 +12,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const NAV_ADMIN = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
-  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
-  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
-  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users,       section: 'User Management' },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations', icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations',icon: Tent,        section: 'Platform' },
   { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
-  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
-  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
-  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
-  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
-  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase,   section: 'Recruitment' },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText,    section: 'Content' },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
@@ -54,18 +54,18 @@ const INITIAL_FAQS: FaqItem[] = [
   { id: '1', question: 'How do I book a camping accommodation on CampyWin?', category: 'Booking', answer: 'Browse accommodations, select your dates and guest count, then click "Book Now" to complete your reservation using our secure payment system.', published: true },
   { id: '2', question: 'What is the cancellation policy for bookings?', category: 'Cancellation', answer: 'Free cancellation is available up to 48 hours before check-in. Late cancellations may incur a fee of up to 50% of the booking total.', published: true },
   { id: '3', question: 'Are all camping sites safety-certified?', category: 'Safety', answer: 'Yes. All partner organizers must pass our safety audit covering equipment, emergency protocols, and first aid availability before listing on CampyWin.', published: true },
-  { id: '4', question: 'How are refunds processed?', category: 'Refunds', answer: 'Approved refunds are processed within 5–7 business days back to the original payment method. You will receive an email confirmation once processed.', published: true },
+  { id: '4', question: 'How are refunds processed?', category: 'Refunds', answer: 'Approved refunds are processed within 5â€“7 business days back to the original payment method. You will receive an email confirmation once processed.', published: true },
   { id: '5', question: 'Can I modify my booking after confirmation?', category: 'Booking', answer: 'You can modify your booking dates or guest count up to 72 hours before check-in, subject to availability, from your dashboard under "My Bookings".', published: false },
   { id: '6', question: 'What should I bring to a desert camping trip?', category: 'Safety', answer: 'We recommend sunscreen, a hat, insulated sleeping bag, at least 3L of water per person per day, a torch, and sturdy closed-toe footwear.', published: true },
 ];
 
 const INITIAL_FORUM_CATS: ForumCategory[] = [
-  { id: '1', name: 'General Discussion', icon: '💬', description: 'Open discussions about camping, travel, and outdoor life in Tunisia.', postCount: 1243, modCount: 3, active: true },
-  { id: '2', name: 'Gear & Equipment Tips', icon: '🎒', description: 'Share and discover the best gear for your outdoor adventures.', postCount: 678, modCount: 2, active: true },
-  { id: '3', name: 'Destinations & Routes', icon: '🗺️', description: 'Explore hidden gems, popular routes, and travel stories across Tunisia.', postCount: 891, modCount: 2, active: true },
-  { id: '4', name: 'Safety & First Aid', icon: '🛡️', description: 'Essential safety tips, emergency procedures, and first aid guides.', postCount: 312, modCount: 4, active: true },
-  { id: '5', name: 'Events & Meetups', icon: '🔥', description: 'Upcoming events, community meetups, and group expedition planning.', postCount: 445, modCount: 2, active: true },
-  { id: '6', name: 'Careers & Jobs', icon: '💼', description: 'Find outdoor industry jobs, post opportunities, and share career advice.', postCount: 189, modCount: 1, active: false },
+  { id: '1', name: 'General Discussion', icon: 'ðŸ’¬', description: 'Open discussions about camping, travel, and outdoor life in Tunisia.', postCount: 1243, modCount: 3, active: true },
+  { id: '2', name: 'Gear & Equipment Tips', icon: 'ðŸŽ’', description: 'Share and discover the best gear for your outdoor adventures.', postCount: 678, modCount: 2, active: true },
+  { id: '3', name: 'Destinations & Routes', icon: 'ðŸ—ºï¸', description: 'Explore hidden gems, popular routes, and travel stories across Tunisia.', postCount: 891, modCount: 2, active: true },
+  { id: '4', name: 'Safety & First Aid', icon: 'ðŸ›¡ï¸', description: 'Essential safety tips, emergency procedures, and first aid guides.', postCount: 312, modCount: 4, active: true },
+  { id: '5', name: 'Events & Meetups', icon: 'ðŸ”¥', description: 'Upcoming events, community meetups, and group expedition planning.', postCount: 445, modCount: 2, active: true },
+  { id: '6', name: 'Careers & Jobs', icon: 'ðŸ’¼', description: 'Find outdoor industry jobs, post opportunities, and share career advice.', postCount: 189, modCount: 1, active: false },
 ];
 
 const INITIAL_BLOG_CATS: BlogCategory[] = [
@@ -77,7 +77,7 @@ const INITIAL_BLOG_CATS: BlogCategory[] = [
 ];
 
 function truncate(text: string, max: number) {
-  return text.length > max ? text.slice(0, max) + '…' : text;
+  return text.length > max ? text.slice(0, max) + 'â€¦' : text;
 }
 
 export default function AdminContentPage() {
@@ -241,3 +241,4 @@ export default function AdminContentPage() {
     </DashboardLayout>
   );
 }
+
