@@ -374,7 +374,11 @@ export function DashboardLayout({ children, navItems, title }: Props) {
                         <p className="text-[10px] text-white/60 mt-1 uppercase tracking-wider">{user.role}</p>
                       </div>
                       <div className="py-1.5">
-                        <Link href="/" onClick={() => setProfileOpen(false)} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <Link
+                          href={user.role === 'ADMIN' ? '/dashboard/admin/profile' : '/dashboard/organizer/profile'}
+                          onClick={() => setProfileOpen(false)}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                        >
                           <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
                             <span className="text-emerald-600 dark:text-emerald-400 text-[9px] font-bold">{user.name[0]}</span>
                           </div>
