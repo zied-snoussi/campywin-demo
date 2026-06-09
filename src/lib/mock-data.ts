@@ -419,6 +419,128 @@ export const SUPPORT_TICKETS: SupportTicket[] = [
   { id: 't5', subject: 'General question about cancellation policy', description: 'Can I cancel a confirmed glamping booking 72 hours before check-in and still get a refund?', priority: 'LOW', status: 'CLOSED', createdAt: '2026-05-01', resolvedAt: '2026-05-02' },
 ];
 
+// ── Map spots ─────────────────────────────────────────────────────────────
+export interface WeatherInfo {
+  temp: number;
+  condition: 'Sunny' | 'Partly Cloudy' | 'Cloudy' | 'Windy' | 'Hot';
+  humidity: number;
+  wind: number;
+  icon: string;
+}
+
+export interface MapSpot {
+  id: string;
+  accommodationId: string;
+  lat: number;
+  lng: number;
+  weather: WeatherInfo;
+}
+
+export const MAP_SPOTS: MapSpot[] = [
+  { id: 's1', accommodationId: '1', lat: 33.455, lng: 9.021, weather: { temp: 38, condition: 'Hot', humidity: 18, wind: 12, icon: '🌵' } },
+  { id: 's2', accommodationId: '2', lat: 36.784, lng: 8.693, weather: { temp: 22, condition: 'Partly Cloudy', humidity: 65, wind: 8, icon: '⛅' } },
+  { id: 's3', accommodationId: '3', lat: 36.954, lng: 8.760, weather: { temp: 27, condition: 'Sunny', humidity: 55, wind: 14, icon: '☀️' } },
+  { id: 's4', accommodationId: '4', lat: 33.544, lng: 9.967, weather: { temp: 36, condition: 'Hot', humidity: 15, wind: 10, icon: '🏜️' } },
+  { id: 's5', accommodationId: '5', lat: 33.919, lng: 8.134, weather: { temp: 35, condition: 'Sunny', humidity: 20, wind: 5, icon: '🌞' } },
+  { id: 's6', accommodationId: '6', lat: 36.452, lng: 10.735, weather: { temp: 29, condition: 'Sunny', humidity: 60, wind: 18, icon: '🏖️' } },
+];
+
+// ── Products & Orders ──────────────────────────────────────────────────────
+export type ProductCategory = 'Shelter' | 'Sleep' | 'Cooking' | 'Gear' | 'Clothing' | 'Hydration' | 'Lighting' | 'Navigation';
+
+export interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  category: ProductCategory;
+  price: number;
+  originalPrice: number;
+  rating: number;
+  reviewCount: number;
+  image: string;
+  description: string;
+  tags: string[];
+  inStock: boolean;
+  badge?: 'New' | 'Best Seller' | 'Sale' | 'Top Rated';
+  similarity: number;
+}
+
+export type OrderStatus = 'PENDING' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED';
+
+export interface OrderItem {
+  productId: string;
+  name: string;
+  image: string;
+  qty: number;
+  price: number;
+}
+
+export interface ProductOrder {
+  id: string;
+  items: OrderItem[];
+  total: number;
+  status: OrderStatus;
+  createdAt: string;
+  estimatedDelivery?: string;
+  trackingNumber?: string;
+  address: string;
+}
+
+export const PRODUCTS: Product[] = [
+  { id: 'p1', name: 'Coleman 4-Season Expedition Tent', brand: 'Coleman', category: 'Shelter', price: 420, originalPrice: 560, rating: 4.8, reviewCount: 312, image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&q=70', description: 'Engineered for the harshest environments. Double-walled construction, full coverage fly, and reinforced poles make this the gold standard for desert and mountain camping.', tags: ['tent', 'shelter', '4-season', 'desert'], inStock: true, badge: 'Best Seller', similarity: 0.92 },
+  { id: 'p2', name: 'MSR Hubba Hubba NX Backpack', brand: 'MSR', category: 'Gear', price: 285, originalPrice: 342, rating: 4.6, reviewCount: 189, image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=70', description: 'Ultra-lightweight 65L backpacking pack with an ergonomic frame and smart organization. Perfect for multi-day Atlas mountain treks.', tags: ['backpack', 'lightweight', 'trekking'], inStock: true, badge: 'Top Rated', similarity: 0.78 },
+  { id: 'p3', name: 'BioLite CampStove 2+', brand: 'BioLite', category: 'Cooking', price: 165, originalPrice: 198, rating: 4.5, reviewCount: 94, image: 'https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=600&q=70', description: 'Converts fire into electricity to charge devices while you cook. Burns wood so there\'s no fuel to carry. Perfect for eco-conscious campers.', tags: ['stove', 'cooking', 'eco', 'charging'], inStock: true, badge: 'New', similarity: 0.65 },
+  { id: 'p4', name: 'Sea to Summit Spark SP1 Sleeping Bag', brand: 'Sea to Summit', category: 'Sleep', price: 310, originalPrice: 380, rating: 4.9, reviewCount: 256, image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=70', description: 'Down-fill sleeping bag rated to -5°C. UltraDry water-repellent treatment keeps you warm even in damp conditions. Compresses to the size of a Nalgene bottle.', tags: ['sleeping bag', 'down', 'lightweight', 'cold-weather'], inStock: true, badge: 'Top Rated', similarity: 0.85 },
+  { id: 'p5', name: 'Petzl Actik Core Headlamp', brand: 'Petzl', category: 'Lighting', price: 75, originalPrice: 90, rating: 4.7, reviewCount: 431, image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&q=70', description: '600-lumen headlamp with rechargeable core battery. Red lighting mode for night-vision preservation. Essential for Sahara stargazing excursions.', tags: ['headlamp', 'lighting', 'rechargeable', 'night'], inStock: true, similarity: 0.70 },
+  { id: 'p6', name: 'Katadyn BeFree Water Filter', brand: 'Katadyn', category: 'Hydration', price: 95, originalPrice: 110, rating: 4.8, reviewCount: 328, image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&q=70', description: 'Filter 0.6L/min from any water source — rivers, oases, springs. EZ-Clean membrane lasts 1000L. Fits any standard 28mm opening bottle.', tags: ['water filter', 'hydration', 'safety', 'lightweight'], inStock: true, badge: 'Best Seller', similarity: 0.60 },
+  { id: 'p7', name: 'Garmin inReach Mini 2 GPS', brand: 'Garmin', category: 'Navigation', price: 550, originalPrice: 620, rating: 4.6, reviewCount: 78, image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=70', description: 'Two-way satellite communicator with SOS capability. No cell signal needed — stay connected even in the deepest Sahara. 14-day battery life.', tags: ['GPS', 'navigation', 'safety', 'satellite', 'sos'], inStock: true, badge: 'New', similarity: 0.55 },
+  { id: 'p8', name: 'Patagonia Nano Puff Jacket', brand: 'Patagonia', category: 'Clothing', price: 240, originalPrice: 280, rating: 4.7, reviewCount: 512, image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=70', description: 'PrimaLoft Gold insulation in a wind-resistant, water-repellent shell. Packs into its own chest pocket. Essential for chilly Atlas mountain evenings.', tags: ['jacket', 'insulation', 'packable', 'windproof'], inStock: false, similarity: 0.72 },
+  { id: 'p9', name: 'Thermarest NeoAir XLite Sleeping Pad', brand: 'Thermarest', category: 'Sleep', price: 210, originalPrice: 250, rating: 4.8, reviewCount: 198, image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=70', description: 'R-value 4.2 inflatable sleeping pad weighing only 340g. Triangular core matrix baffles reduce weight while maintaining support. Rolls to the size of a water bottle.', tags: ['sleeping pad', 'lightweight', 'inflatable', 'warmth'], inStock: true, badge: 'Sale', similarity: 0.80 },
+  { id: 'p10', name: 'Primus Lite+ Stove System', brand: 'Primus', category: 'Cooking', price: 125, originalPrice: 145, rating: 4.5, reviewCount: 143, image: 'https://images.unsplash.com/photo-1548277234-24e7c04ac1e5?w=600&q=70', description: 'Complete pot and stove system boils 500ml in under 3 minutes. WindShield technology works in harsh desert conditions. 550ml pot nests perfectly with the burner.', tags: ['stove', 'cooking', 'compact', 'wind-resistant'], inStock: true, similarity: 0.63 },
+  { id: 'p11', name: 'Osprey Atmos AG 65 Pack', brand: 'Osprey', category: 'Gear', price: 360, originalPrice: 420, rating: 4.9, reviewCount: 387, image: 'https://images.unsplash.com/photo-1585614688817-f91ebab2d2ea?w=600&q=70', description: 'Anti-Gravity suspension keeps the pack off your back for maximum airflow. 65L capacity with external attachment points for poles and axes. Our most popular trekking pack.', tags: ['backpack', 'anti-gravity', 'trekking', '65L'], inStock: true, badge: 'Best Seller', similarity: 0.75 },
+  { id: 'p12', name: 'Black Diamond Spot 400 Headlamp', brand: 'Black Diamond', category: 'Lighting', price: 55, originalPrice: 65, rating: 4.6, reviewCount: 267, image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=600&q=70', description: '400-lumen output with PowerTap technology to instantly switch between full and dimmed power. IPX8 waterproof. Lock mode prevents accidental activation in your pack.', tags: ['headlamp', 'waterproof', 'camping', 'bright'], inStock: true, similarity: 0.68 },
+];
+
+export const MY_ORDERS: ProductOrder[] = [
+  {
+    id: 'ORD-8821',
+    items: [
+      { productId: 'p1', name: 'Coleman 4-Season Expedition Tent', image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=200&q=70', qty: 1, price: 420 },
+      { productId: 'p5', name: 'Petzl Actik Core Headlamp', image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=200&q=70', qty: 2, price: 75 },
+    ],
+    total: 570,
+    status: 'DELIVERED',
+    createdAt: '2026-05-10',
+    estimatedDelivery: '2026-05-15',
+    trackingNumber: 'TN-8821-XK2',
+    address: '12 Rue de la Liberté, Tunis 1001',
+  },
+  {
+    id: 'ORD-9134',
+    items: [
+      { productId: 'p4', name: 'Sea to Summit Spark SP1 Sleeping Bag', image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=200&q=70', qty: 1, price: 310 },
+      { productId: 'p9', name: 'Thermarest NeoAir XLite Sleeping Pad', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=200&q=70', qty: 1, price: 210 },
+    ],
+    total: 520,
+    status: 'SHIPPED',
+    createdAt: '2026-06-04',
+    estimatedDelivery: '2026-06-11',
+    trackingNumber: 'TN-9134-YM5',
+    address: '12 Rue de la Liberté, Tunis 1001',
+  },
+  {
+    id: 'ORD-9287',
+    items: [
+      { productId: 'p3', name: 'BioLite CampStove 2+', image: 'https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=200&q=70', qty: 1, price: 165 },
+    ],
+    total: 165,
+    status: 'PROCESSING',
+    createdAt: '2026-06-08',
+    estimatedDelivery: '2026-06-14',
+    address: '12 Rue de la Liberté, Tunis 1001',
+  },
+];
+
 export const ADMIN_STATS = {
   totalUsers: 2847,
   totalOrganizers: 134,

@@ -2,10 +2,15 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Globe, ArrowUpRight, Camera, Shield, Heart } from 'lucide-react';
+import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Globe, ArrowUpRight, Camera, Shield, Heart, ShoppingBag } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
-import { ACCOMMODATIONS, EVENTS } from '@/lib/mock-data';
+import { MapLoader } from '@/components/map/map-loader';
+import { ACCOMMODATIONS, EVENTS, PRODUCTS } from '@/lib/mock-data';
+
+function MapTeaser() {
+  return <MapLoader compact={true} />;
+}
 
 const STATS = [
   { value: '2,847', label: 'Active Users', icon: Users, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-100 dark:bg-emerald-900/30' },
@@ -38,7 +43,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/80 via-emerald-900/40 to-transparent dark:from-gray-950/90 dark:via-gray-900/50" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter mb-6">
               Explore the Wild,<br />
@@ -77,42 +82,42 @@ export default function LandingPage() {
       </header>
 
       {/* ── Entry Cards (2-col) ── */}
-      <section className="max-w-7xl mx-auto px-8 -mt-20 relative z-20 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-14 md:-mt-20 relative z-20 pb-12 sm:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {/* For Adventurers */}
-          <div className="group relative overflow-hidden rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/accommodations')}>
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-[2rem]" />
-            <div className="relative bg-white dark:bg-gray-800 rounded-[2rem] p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
-              <div className="inline-flex w-fit mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                  <Tent className="w-7 h-7" />
+          <div className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/accommodations')}>
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+            <div className="relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
+              <div className="inline-flex w-fit mb-4 sm:mb-6">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                  <Tent className="w-5 h-5 sm:w-7 sm:h-7" />
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-emerald-950 dark:text-emerald-50 mb-3">For Adventurers</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed flex-grow">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-emerald-950 dark:text-emerald-50 mb-2 sm:mb-3">For Adventurers</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-5 sm:mb-8 text-sm sm:text-base lg:text-lg leading-relaxed flex-grow">
                 Discover off-grid sanctuaries with modern amenities. Book authentic camping stays in Tunisia's most spectacular locations.
               </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit">
-                Explore Stays <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              <button className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit text-sm sm:text-base">
+                Explore Stays <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
 
           {/* For Organizers */}
-          <div className="group relative overflow-hidden rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/dashboard/organizer')}>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-[2rem]" />
-            <div className="relative bg-white dark:bg-gray-800 rounded-[2rem] p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
-              <div className="inline-flex w-fit mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                  <Globe className="w-7 h-7" />
+          <div className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] transition-all duration-300 cursor-pointer" onClick={() => router.push('/dashboard/organizer')}>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+            <div className="relative bg-white dark:bg-gray-800 rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 dark:border-gray-700">
+              <div className="inline-flex w-fit mb-4 sm:mb-6">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                  <Globe className="w-5 h-5 sm:w-7 sm:h-7" />
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-purple-950 dark:text-purple-50 mb-3">For Organizers</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed flex-grow">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-purple-950 dark:text-purple-50 mb-2 sm:mb-3">For Organizers</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-5 sm:mb-8 text-sm sm:text-base lg:text-lg leading-relaxed flex-grow">
                 Manage your property, reach travelers worldwide, and grow your outdoor business with professional tools.
               </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit">
-                List Your Property <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+              <button className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold rounded-lg transition-all duration-300 group/btn hover:gap-4 active:scale-95 w-fit text-sm sm:text-base">
+                List Your Property <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -351,6 +356,78 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Interactive Map ── */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-4">
+              <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Explore the Map</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">Find Your Perfect Spot</h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Browse camping locations across Tunisia with live weather data at each spot — then book instantly.</p>
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700" style={{ height: 420 }}>
+            <MapTeaser />
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/login" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all shadow-lg">
+              <MapPin className="w-5 h-5" /> Open Full Map & Book
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Gear Shop Teaser ── */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-4">
+                <ShoppingBag className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Gear Shop</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2">Gear Up for Your Adventure</h2>
+              <p className="text-gray-500 dark:text-gray-400">Top-rated equipment — delivered across Tunisia in TND</p>
+            </div>
+            <Link href="/login" className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline flex items-center gap-1 hidden sm:flex">
+              Shop all gear <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PRODUCTS.filter(p => p.badge === 'Best Seller' || p.badge === 'Top Rated').slice(0, 4).map(product => (
+              <Link href="/login" key={product.id} className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 hover:shadow-xl transition-all overflow-hidden">
+                <div className="relative h-44">
+                  <Image src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" unoptimized />
+                  {product.badge && (
+                    <span className={`absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-bold text-white ${product.badge === 'Best Seller' ? 'bg-amber-500' : 'bg-emerald-500'}`}>{product.badge}</span>
+                  )}
+                </div>
+                <div className="p-4 space-y-2">
+                  <p className="text-xs text-gray-400 font-medium">{product.brand}</p>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-sm leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{product.name}</h3>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-3 h-3 ${i < Math.round(product.rating) ? 'fill-amber-400 text-amber-400' : 'text-gray-200'}`} />
+                    ))}
+                    <span className="text-xs text-gray-400 ml-1">{product.rating}</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-1">
+                    <span className="font-black text-emerald-600 dark:text-emerald-400">{product.price} <span className="text-xs font-semibold">TND</span></span>
+                    {product.price < product.originalPrice && <span className="text-xs text-gray-400 line-through">{product.originalPrice} TND</span>}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/login" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-emerald-200 dark:hover:shadow-emerald-900/30">
+              <ShoppingBag className="w-5 h-5" /> Browse Full Gear Shop
+            </Link>
           </div>
         </div>
       </section>

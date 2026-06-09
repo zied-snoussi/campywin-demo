@@ -203,7 +203,7 @@ export default function ClientDashboard() {
         <section>
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Recent Activity</h2>
-            <button onClick={() => router.push('/accommodations')} className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
+            <button onClick={() => router.push('/dashboard/client/bookings')} className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
               View All →
             </button>
           </div>
@@ -243,7 +243,7 @@ export default function ClientDashboard() {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🎒 Recommended For You</h2>
               <p className="text-sm text-gray-400 mt-1">Top-rated equipment based on your activity preferences</p>
             </div>
-            <button className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline px-4 py-2 rounded hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors">
+            <button onClick={() => router.push('/dashboard/client/products')} className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline px-4 py-2 rounded hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors">
               Browse All →
             </button>
           </div>
@@ -312,7 +312,7 @@ export default function ClientDashboard() {
         <section>
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">My Bookings</h2>
-            <button onClick={() => router.push('/accommodations')} className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
+            <button onClick={() => router.push('/dashboard/client/stays')} className="text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
               Browse stays →
             </button>
           </div>
@@ -350,7 +350,7 @@ export default function ClientDashboard() {
         <section className="pb-10">
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Job Applications</h2>
-            <button onClick={() => router.push('/jobs')} className="text-purple-600 dark:text-purple-400 font-bold text-sm hover:underline">
+            <button onClick={() => router.push('/dashboard/client/careers')} className="text-purple-600 dark:text-purple-400 font-bold text-sm hover:underline">
               Browse jobs →
             </button>
           </div>

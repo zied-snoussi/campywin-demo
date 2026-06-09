@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ChevronDown, Calendar, BookOpen, User, MessageSquare } from 'lucide-react';
+import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ChevronDown, Calendar, BookOpen, User, MessageSquare, ShoppingBag, Package, Map } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { CaptainChatbot } from '@/components/captain/captain-chatbot';
 
@@ -43,7 +43,7 @@ const INIT_MSG: Msg = {
 /* ── nav items (excluding Captain center) ── */
 const LEFT_NAV = [
   { label: 'Home', href: '/dashboard/client', icon: Home },
-  { label: 'Stay', href: '/dashboard/client/stays', icon: MapPin },
+  { label: 'Map', href: '/dashboard/client/map', icon: Map },
 ];
 const RIGHT_NAV = [
   { label: 'Careers', href: '/dashboard/client/careers', icon: Briefcase },
@@ -158,6 +158,9 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
                       { href: '/dashboard/client/applications', icon: Briefcase, label: 'Applications' },
                       { href: '/dashboard/client/events', icon: Calendar, label: 'Events' },
                       { href: '/dashboard/client/forum', icon: MessageSquare, label: 'Forum' },
+                      { href: '/dashboard/client/map', icon: Map, label: 'Explore Map' },
+                      { href: '/dashboard/client/products', icon: ShoppingBag, label: 'Gear Shop' },
+                      { href: '/dashboard/client/orders', icon: Package, label: 'My Orders' },
                     ].map(({ href, icon: Icon, label }) => (
                       <Link key={href} href={href} onClick={() => setProfileOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
