@@ -117,6 +117,14 @@
   --sidebar-ring: oklch(0.72 0.17 155);
 }
 
+@keyframes qr-scan {
+  0%   { transform: translateY(0);     opacity: 0; }
+  6%   { opacity: 1; }
+  94%  { opacity: 1; }
+  100% { transform: translateY(216px); opacity: 0; }
+}
+.animate-qr-scan { animation: qr-scan 3s cubic-bezier(0.4,0,0.6,1) infinite; }
+
 @keyframes float-pulse {
   0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 0 16px rgba(16,185,129,0.4); }
   50% { transform: translateY(-8px) scale(1.04); box-shadow: 0 8px 32px rgba(16,185,129,0.6); }

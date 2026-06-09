@@ -2,7 +2,8 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Globe, ArrowUpRight, Camera, Shield, Heart, ShoppingBag } from 'lucide-react';
+import { Search, MapPin, Star, Users, Tent, Briefcase, ArrowRight, Globe, ArrowUpRight, Camera, Shield, Heart, ShoppingBag, Smartphone } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { MapLoader } from '@/components/map/map-loader';
@@ -517,6 +518,117 @@ export default function LandingPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PWA Install ── */}
+      <section className="relative py-24 bg-[#020c06] overflow-hidden">
+        {/* Dot-grid texture */}
+        <div className="absolute inset-0 opacity-100" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(52,211,153,0.07) 1px, transparent 0)', backgroundSize: '28px 28px' }} />
+        {/* Ambient glows */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-teal-500/6 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-28">
+
+            {/* ── Left: copy ── */}
+            <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-7">
+                <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="text-xs font-bold text-emerald-400 tracking-widest uppercase">Install as PWA</span>
+              </div>
+
+              <h2 className="text-5xl sm:text-6xl font-black text-white leading-[1.05] tracking-tight mb-5">
+                Install in<br />
+                <span className="text-emerald-400">seconds.</span>
+              </h2>
+              <p className="text-white/40 text-lg leading-relaxed mb-12 max-w-sm mx-auto lg:mx-0">
+                No App Store. No download. Scan once, add to your home screen, and you're set.
+              </p>
+
+              {/* Numbered steps */}
+              <div className="space-y-5 max-w-[280px] mx-auto lg:mx-0">
+                {[
+                  { n: '01', text: 'Open your camera app' },
+                  { n: '02', text: 'Point at the QR code' },
+                  { n: '03', text: 'Tap  "Add to Home Screen"' },
+                ].map(({ n, text }) => (
+                  <div key={n} className="flex items-center gap-3">
+                    <span className="text-[11px] font-black text-emerald-500/50 font-mono tracking-widest w-7 flex-shrink-0">{n}</span>
+                    <div className="flex-1 h-px bg-white/6" />
+                    <span className="text-sm text-white/60 font-medium">{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Platform chips */}
+              <div className="flex items-center gap-2 mt-10 justify-center lg:justify-start flex-wrap">
+                {[
+                  { label: 'iOS Safari' },
+                  { label: 'Chrome' },
+                  { label: 'Android' },
+                  { label: 'Edge' },
+                ].map(({ label }) => (
+                  <span key={label} className="px-3 py-1 rounded-full bg-white/5 border border-white/8 text-xs text-white/35 font-medium">{label}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Right: QR scanner ── */}
+            <div className="flex-shrink-0 flex flex-col items-center gap-5 order-1 lg:order-2">
+
+              {/* Scan-ready badge */}
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span className="text-xs font-semibold text-white/50 tracking-widest uppercase">Scan to install</span>
+              </div>
+
+              {/* Scanner frame */}
+              <div className="relative p-5 rounded-[2rem]"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', boxShadow: '0 0 0 1px rgba(52,211,153,0.06), 0 32px 80px rgba(0,0,0,0.7), 0 0 120px rgba(52,211,153,0.08)' }}>
+
+                {/* Corner L-brackets */}
+                {[
+                  'top-[-1px] left-[-1px] border-t-[2.5px] border-l-[2.5px] rounded-tl-xl',
+                  'top-[-1px] right-[-1px] border-t-[2.5px] border-r-[2.5px] rounded-tr-xl',
+                  'bottom-[-1px] left-[-1px] border-b-[2.5px] border-l-[2.5px] rounded-bl-xl',
+                  'bottom-[-1px] right-[-1px] border-b-[2.5px] border-r-[2.5px] rounded-br-xl',
+                ].map((cls, i) => (
+                  <div key={i} className={`absolute w-8 h-8 border-emerald-400 ${cls}`} />
+                ))}
+
+                {/* QR code + scan line */}
+                <div className="relative overflow-hidden rounded-2xl"
+                  style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06)', background: '#fff' }}>
+                  <div className="p-3.5">
+                    <QRCodeSVG
+                      value="https://campywin-demo.vercel.app"
+                      size={216}
+                      bgColor="#ffffff"
+                      fgColor="#022c22"
+                      level="H"
+                      imageSettings={{ src: '/icon-192.png', height: 42, width: 42, excavate: true }}
+                    />
+                  </div>
+                  {/* Animated scan beam */}
+                  <div className="absolute inset-x-0 top-0 animate-qr-scan pointer-events-none">
+                    <div className="h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-90" />
+                    <div className="h-16 bg-gradient-to-b from-emerald-400/18 via-emerald-400/6 to-transparent" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Caption */}
+              <p className="text-xs text-white/25 text-center tracking-wide">
+                Point your camera — no app needed
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
