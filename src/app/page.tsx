@@ -300,6 +300,56 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── LinkedIn Spotlight ── */}
+      <section className="py-20 bg-gradient-to-b from-emerald-950 to-emerald-900">
+        <div className="max-w-5xl mx-auto px-8">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-[#0A66C2]">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <span className="text-sm font-semibold text-white/90">Featured on LinkedIn</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
+              The Story Behind CampyWin
+            </h2>
+            <p className="text-emerald-200/70 text-lg max-w-xl mx-auto">
+              See how the platform came to life — from idea to full-stack product, shared with the community.
+            </p>
+          </div>
+
+          {/* Embed card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-[504px] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(5,150,105,0.25)] ring-1 ring-white/10">
+              <iframe
+                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7468435212339703808"
+                height="1653"
+                width="504"
+                style={{ width: '100%', display: 'block', border: 0 }}
+                allowFullScreen
+                title="CampyWin – Project Showcase on LinkedIn"
+              />
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-10">
+            <a
+              href="https://www.linkedin.com/posts/zied-snoussi_campywin-baldesprojets2026-braincrafters-ugcPost-7468435212339703808-HZyr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0A66C2] hover:bg-[#0958a8] text-white font-bold rounded-xl transition-all shadow-lg active:scale-95"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              View on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── About Section ── */}
       <section id="about" className="py-24 px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
