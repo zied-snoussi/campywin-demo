@@ -2,9 +2,10 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Search, ShoppingCart, Star, Heart, X, Plus, Minus, CheckCircle, SlidersHorizontal, Sparkles, Zap } from 'lucide-react';
+import { Search, ShoppingCart, Star, Heart, X, Plus, Minus, CheckCircle, Sparkles, Zap } from 'lucide-react';
 import { ClientLayout } from '@/components/layout/client-layout';
 import { PRODUCTS, type Product, type ProductCategory } from '@/lib/mock-data';
+import { useStore } from '@/lib/store';
 
 const CATEGORIES: Array<{ value: ProductCategory | 'All'; label: string; emoji: string }> = [
   { value: 'All', label: 'All Gear', emoji: '🏕️' },
@@ -33,14 +34,12 @@ const BADGE_COLORS: Record<string, string> = {
   'Top Rated': 'bg-emerald-500',
 };
 
-interface CartItem { product: Product; qty: number }
-
 export default function ProductsPage() {
   const router = useRouter();
+  const { cart, addToCart, removeFromCart, updateCartQty, clearCart } = useStore();
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState<ProductCategory | 'All'>('All');
   const [sort, setSort] = useState('recommended');
-  const [cart, setCart] = useState<CartItem[]>([]);
   const [liked, setLiked] = useState<string[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [selected, setSelected] = useState<Product | null>(null);
@@ -64,24 +63,14 @@ export default function ProductsPage() {
       });
   }, [search, category, sort]);
 
-  const cartTotal = cart.reduce((s, i) => s + i.product.price * i.qty, 0);
+  const cartTotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
 
-  const addToCart = (product: Product) => {
-    setCart(prev => {
-      const existing = prev.find(i => i.product.id === product.id);
-      if (existing) return prev.map(i => i.product.id === product.id ? { ...i, qty: i.qty + 1 } : i);
-      return [...prev, { product, qty: 1 }];
-    });
+  const handleAddToCart = (product: Product) => {
+    addToCart({ productId: product.id, name: product.name, image: product.image, price: product.price });
     setAddedId(product.id);
     setTimeout(() => setAddedId(null), 1200);
   };
-
-  const updateQty = (id: string, delta: number) => {
-    setCart(prev => prev.map(i => i.product.id === id ? { ...i, qty: Math.max(1, i.qty + delta) } : i).filter(i => i.qty > 0));
-  };
-
-  const removeFromCart = (id: string) => setCart(prev => prev.filter(i => i.product.id !== id));
 
   const handleCheckout = () => {
     setCheckingOut(true);
@@ -90,7 +79,7 @@ export default function ProductsPage() {
       setOrdered(true);
       setTimeout(() => {
         setOrdered(false);
-        setCart([]);
+        clearCart();
         setCartOpen(false);
         router.push('/dashboard/client/orders');
       }, 2000);
@@ -205,7 +194,7 @@ export default function ProductsPage() {
                 </div>
                 <button
                   disabled={!product.inStock}
-                  onClick={() => addToCart(product)}
+                  onClick={() => handleAddToCart(product)}
                   className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all active:scale-95 ${addedId === product.id ? 'bg-emerald-600 text-white' : product.inStock ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-md' : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'}`}
                 >
                   {addedId === product.id ? <><CheckCircle className="w-3.5 h-3.5" /> Added!</> : <><ShoppingCart className="w-3.5 h-3.5" /> Add</>}
@@ -249,7 +238,7 @@ export default function ProductsPage() {
                 </div>
                 <button
                   disabled={!selected.inStock}
-                  onClick={() => { addToCart(selected); setSelected(null); }}
+                  onClick={() => { handleAddToCart(selected); setSelected(null); }}
                   className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-300 dark:disabled:bg-gray-700 text-white font-bold rounded-xl transition-all active:scale-95 disabled:cursor-not-allowed"
                 >
                   <ShoppingCart className="w-4 h-4" /> {selected.inStock ? 'Add to Cart' : 'Out of Stock'}
@@ -290,23 +279,24 @@ export default function ProductsPage() {
                       <p className="text-sm mt-1">Browse gear and add items</p>
                     </div>
                   ) : cart.map(item => (
-                    <div key={item.product.id} className="flex gap-3 items-start">
-                      <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-                        <Image src={item.product.image} alt={item.product.name} fill className="object-cover" unoptimized />
+                    <div key={item.productId} className="flex gap-3 items-start">
+                      <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold text-gray-900 dark:text-white leading-snug">{item.product.name}</p>
-                        <p className="text-xs text-gray-400 mt-0.5">{item.product.brand}</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white leading-snug">{item.name}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{item.price} TND each</p>
                         <div className="flex items-center justify-between mt-2">
                           <div className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 rounded-lg">
-                            <button onClick={() => updateQty(item.product.id, -1)} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-lg transition-colors"><Minus className="w-3 h-3" /></button>
+                            <button onClick={() => updateCartQty(item.productId, -1)} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-lg transition-colors"><Minus className="w-3 h-3" /></button>
                             <span className="w-6 text-center text-sm font-bold text-gray-900 dark:text-white">{item.qty}</span>
-                            <button onClick={() => updateQty(item.product.id, 1)} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-r-lg transition-colors"><Plus className="w-3 h-3" /></button>
+                            <button onClick={() => updateCartQty(item.productId, 1)} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-r-lg transition-colors"><Plus className="w-3 h-3" /></button>
                           </div>
-                          <span className="text-sm font-black text-emerald-600 dark:text-emerald-400">{(item.product.price * item.qty).toLocaleString()} TND</span>
+                          <span className="text-sm font-black text-emerald-600 dark:text-emerald-400">{(item.price * item.qty).toLocaleString()} TND</span>
                         </div>
                       </div>
-                      <button onClick={() => removeFromCart(item.product.id)} className="p-1 text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"><X className="w-3.5 h-3.5" /></button>
+                      <button onClick={() => removeFromCart(item.productId)} className="p-1 text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"><X className="w-3.5 h-3.5" /></button>
                     </div>
                   ))}
                 </div>

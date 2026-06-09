@@ -3,9 +3,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ChevronDown, Calendar, BookOpen, User, MessageSquare, ShoppingBag, Package, Map } from 'lucide-react';
+import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ShoppingCart, Plus, Minus, Trash2, CheckCircle, Calendar, BookOpen, User, MessageSquare, ShoppingBag, Package, Map, Car } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { CaptainChatbot } from '@/components/captain/captain-chatbot';
+
+const NOTIFS = [
+  { id: 'n1', icon: '✅', text: 'Your booking at Sahara Glamping Camp has been confirmed!', time: '2 min ago' },
+  { id: 'n2', icon: '🎉', text: 'Desert Stargazing Festival starts in 3 days. Get ready!', time: '1 hour ago' },
+  { id: 'n3', icon: '📦', text: 'Your order #ORD-003 has been shipped and is on its way.', time: '3 hours ago' },
+  { id: 'n4', icon: '💼', text: 'Your application for Camp Chef was reviewed by the organizer.', time: 'Yesterday' },
+  { id: 'n5', icon: '🌟', text: 'New gear recommendation: TrailBlazer Headlamp 500 — perfect for your next trip!', time: '2 days ago' },
+];
 
 /* ── shared chat logic ── */
 const MOCK = {
@@ -46,14 +54,34 @@ const LEFT_NAV = [
   { label: 'Map', href: '/dashboard/client/map', icon: Map },
 ];
 const RIGHT_NAV = [
-  { label: 'Careers', href: '/dashboard/client/careers', icon: Briefcase },
+  { label: 'Transport', href: '/dashboard/client/transport', icon: Car },
   { label: 'Help', href: '/dashboard/client/support', icon: HelpCircle },
 ];
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { user, isDark, logout, toggleTheme } = useStore();
+  const { user, isDark, logout, toggleTheme, cart, removeFromCart, updateCartQty, clearCart } = useStore();
+
+  const cartCount = cart.reduce((s, i) => s + i.qty, 0);
+  const cartTotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+  const [cartChecking, setCartChecking] = useState(false);
+  const [cartOrdered, setCartOrdered] = useState(false);
+
+  const handleCartCheckout = () => {
+    setCartChecking(true);
+    setTimeout(() => {
+      setCartChecking(false);
+      setCartOrdered(true);
+      setTimeout(() => {
+        setCartOrdered(false);
+        clearCart();
+        setCartOpen(false);
+        router.push('/dashboard/client/orders');
+      }, 1800);
+    }, 1400);
+  };
 
   /* mobile chat sheet state */
   const [chatOpen, setChatOpen] = useState(false);
@@ -61,19 +89,24 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [notifOpen, setNotifOpen] = useState(false);
+  const [readNotifs, setReadNotifs] = useState<string[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const cartRef = useRef<HTMLDivElement>(null);
+  const notifRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, typing, chatOpen]);
 
-  // Close profile dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
-        setProfileOpen(false);
-      }
+      if (profileRef.current && !profileRef.current.contains(e.target as Node)) setProfileOpen(false);
+      if (cartRef.current && !cartRef.current.contains(e.target as Node)) setCartOpen(false);
+      if (notifRef.current && !notifRef.current.contains(e.target as Node)) setNotifOpen(false);
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
@@ -132,11 +165,146 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             {/* Notifications */}
-            <button aria-label="Notifications"
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800 transition-colors text-emerald-700 dark:text-emerald-400 relative">
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full" />
-            </button>
+            <div className="relative" ref={notifRef}>
+              <button onClick={() => setNotifOpen(o => !o)} aria-label="Notifications"
+                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800 transition-colors text-emerald-700 dark:text-emerald-400 relative">
+                <Bell className="w-5 h-5" />
+                {NOTIFS.some(n => !readNotifs.includes(n.id)) && (
+                  <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full" />
+                )}
+              </button>
+
+              {notifOpen && (
+                <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 z-50 overflow-hidden">
+                  <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                    <h3 className="font-black text-gray-900 dark:text-white text-sm flex items-center gap-2">
+                      <Bell className="w-4 h-4 text-emerald-500" /> Notifications
+                    </h3>
+                    <button onClick={() => { setReadNotifs(NOTIFS.map(n => n.id)); }}
+                      className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline font-semibold">
+                      Mark all read
+                    </button>
+                  </div>
+                  <div className="max-h-80 overflow-y-auto divide-y divide-gray-50 dark:divide-gray-800">
+                    {NOTIFS.map(n => (
+                      <button key={n.id} onClick={() => setReadNotifs(r => r.includes(n.id) ? r : [...r, n.id])}
+                        className={`w-full text-left flex items-start gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ${!readNotifs.includes(n.id) ? 'bg-emerald-50/50 dark:bg-emerald-900/10' : ''}`}>
+                        <span className="text-xl flex-shrink-0 mt-0.5">{n.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className={`text-xs leading-snug ${!readNotifs.includes(n.id) ? 'font-bold text-gray-900 dark:text-white' : 'font-medium text-gray-600 dark:text-gray-300'}`}>{n.text}</p>
+                          <p className="text-[11px] text-gray-400 mt-0.5">{n.time}</p>
+                        </div>
+                        {!readNotifs.includes(n.id) && <span className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0 mt-1.5" />}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Cart */}
+            <div className="relative" ref={cartRef}>
+              <button
+                onClick={() => setCartOpen(o => !o)}
+                aria-label="Shopping cart"
+                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800 transition-colors text-emerald-700 dark:text-emerald-400 relative"
+              >
+                <ShoppingCart className="w-5 h-5" />
+                {cartCount > 0 && (
+                  <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-emerald-600 text-white text-[9px] font-black rounded-full flex items-center justify-center leading-none">
+                    {cartCount > 9 ? '9+' : cartCount}
+                  </span>
+                )}
+              </button>
+
+              {cartOpen && (
+                <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 z-50 overflow-hidden">
+                  <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+                    <h3 className="font-black text-gray-900 dark:text-white text-sm flex items-center gap-2">
+                      <ShoppingCart className="w-4 h-4 text-emerald-500" /> Cart ({cartCount})
+                    </h3>
+                    <button onClick={() => setCartOpen(false)} className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400">
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  <div className="max-h-64 overflow-y-auto">
+                    {cart.length === 0 ? (
+                      <div className="py-10 text-center text-gray-400">
+                        <ShoppingCart className="w-10 h-10 mx-auto mb-2 opacity-30" />
+                        <p className="text-sm font-medium">Your cart is empty</p>
+                        <button
+                          onClick={() => { setCartOpen(false); router.push('/dashboard/client/products'); }}
+                          className="mt-3 text-xs text-emerald-600 dark:text-emerald-400 hover:underline font-semibold"
+                        >
+                          Browse gear shop →
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="divide-y divide-gray-50 dark:divide-gray-800">
+                        {cart.map(item => (
+                          <div key={item.productId} className="flex items-center gap-3 px-4 py-3">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={item.image} alt={item.name} className="w-10 h-10 rounded-lg object-cover flex-shrink-0 bg-gray-100" />
+                            <div className="flex-1 min-w-0">
+                              <p className="text-xs font-bold text-gray-900 dark:text-white truncate">{item.name}</p>
+                              <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">{(item.price * item.qty).toLocaleString()} TND</p>
+                            </div>
+                            <div className="flex items-center gap-1.5 flex-shrink-0">
+                              <button onClick={() => updateCartQty(item.productId, -1)}
+                                className="w-5 h-5 rounded-full border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                <Minus className="w-2.5 h-2.5" />
+                              </button>
+                              <span className="text-xs font-bold w-4 text-center text-gray-900 dark:text-white">{item.qty}</span>
+                              <button onClick={() => updateCartQty(item.productId, 1)}
+                                className="w-5 h-5 rounded-full border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                <Plus className="w-2.5 h-2.5" />
+                              </button>
+                              <button onClick={() => removeFromCart(item.productId)}
+                                className="w-5 h-5 rounded-full flex items-center justify-center text-gray-300 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors ml-0.5">
+                                <Trash2 className="w-2.5 h-2.5" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {cart.length > 0 && (
+                    <div className="px-4 py-3 border-t border-gray-100 dark:border-gray-700 space-y-2">
+                      {cartOrdered ? (
+                        <div className="py-4 text-center">
+                          <CheckCircle className="w-8 h-8 text-emerald-500 mx-auto mb-1" />
+                          <p className="text-sm font-black text-gray-900 dark:text-white">Order placed!</p>
+                          <p className="text-xs text-gray-400">Redirecting to orders…</p>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="flex justify-between text-sm font-black text-gray-900 dark:text-white">
+                            <span>Total</span>
+                            <span className="text-emerald-600 dark:text-emerald-400">{cartTotal.toLocaleString()} TND</span>
+                          </div>
+                          <button
+                            onClick={handleCartCheckout}
+                            disabled={cartChecking}
+                            className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-70 text-white text-sm font-bold rounded-xl transition-all active:scale-95"
+                          >
+                            {cartChecking ? 'Processing…' : 'Checkout →'}
+                          </button>
+                          <button
+                            onClick={() => { setCartOpen(false); router.push('/dashboard/client/products'); }}
+                            className="w-full py-2 text-xs text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors text-center"
+                          >
+                            View & edit full cart
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
             {/* Profile avatar + dropdown */}
             <div className="relative" ref={profileRef}>
@@ -161,6 +329,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
                       { href: '/dashboard/client/map', icon: Map, label: 'Explore Map' },
                       { href: '/dashboard/client/products', icon: ShoppingBag, label: 'Gear Shop' },
                       { href: '/dashboard/client/orders', icon: Package, label: 'My Orders' },
+                      { href: '/dashboard/client/transport', icon: Car, label: 'Transport' },
                     ].map(({ href, icon: Icon, label }) => (
                       <Link key={href} href={href} onClick={() => setProfileOpen(false)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">

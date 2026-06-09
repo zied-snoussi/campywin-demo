@@ -560,3 +560,213 @@ export const ORGANIZER_STATS = {
   totalEquipment: 94,
   pendingApplications: 16,
 };
+
+// ─── Transport & Covoiturage ──────────────────────────────────────────────────
+
+export type TransportType = 'Covoiturage' | 'Shuttle' | 'Transfer';
+export type TransportStatus = 'AVAILABLE' | 'FULL' | 'DEPARTED';
+export type MyRideStatus = 'CONFIRMED' | 'PENDING' | 'COMPLETED' | 'CANCELLED';
+
+export interface TransportOffer {
+  id: string;
+  type: TransportType;
+  driverName: string;
+  driverRating: number;
+  from: string;
+  to: string;
+  destinationSpot: string; // matching accommodation location
+  departureDate: string;
+  departureTime: string;
+  totalSeats: number;
+  availableSeats: number;
+  pricePerSeat: number;
+  car: string;
+  notes: string;
+  status: TransportStatus;
+}
+
+export interface MyRide {
+  id: string;
+  role: 'passenger' | 'driver';
+  offer: TransportOffer;
+  seats: number;
+  totalPaid: number;
+  bookedAt: string;
+  status: MyRideStatus;
+}
+
+export const TRANSPORT_OFFERS: TransportOffer[] = [
+  {
+    id: 'tr1',
+    type: 'Covoiturage',
+    driverName: 'Ahmed Maaloul',
+    driverRating: 4.9,
+    from: 'Tunis — Bab Saadoun',
+    to: 'Douz',
+    destinationSpot: 'Douz',
+    departureDate: '2026-06-15',
+    departureTime: '06:00',
+    totalSeats: 4,
+    availableSeats: 2,
+    pricePerSeat: 35,
+    car: 'Peugeot 308 · Blanc',
+    notes: 'Arrêt possible à Kairouan. Bagages de camping OK.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr2',
+    type: 'Covoiturage',
+    driverName: 'Sarra Belhaj',
+    driverRating: 4.7,
+    from: 'Sfax — Place Hedi Chaker',
+    to: 'Douz',
+    destinationSpot: 'Douz',
+    departureDate: '2026-06-15',
+    departureTime: '07:30',
+    totalSeats: 3,
+    availableSeats: 1,
+    pricePerSeat: 28,
+    car: 'Dacia Duster · Gris',
+    notes: 'Pas d\'animaux. Départ à l\'heure.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr3',
+    type: 'Shuttle',
+    driverName: 'CampyWin Express',
+    driverRating: 4.8,
+    from: 'Tunis — Gare Routière',
+    to: 'Ain Draham',
+    destinationSpot: 'Ain Draham',
+    departureDate: '2026-06-14',
+    departureTime: '08:00',
+    totalSeats: 12,
+    availableSeats: 5,
+    pricePerSeat: 45,
+    car: 'Minibus Mercedes 16 places',
+    notes: 'Navette officielle CampyWin. Climatisée. WiFi à bord.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr4',
+    type: 'Covoiturage',
+    driverName: 'Yassine Trabelsi',
+    driverRating: 4.6,
+    from: 'Tunis — La Marsa',
+    to: 'Tabarka',
+    destinationSpot: 'Tabarka',
+    departureDate: '2026-06-16',
+    departureTime: '09:00',
+    totalSeats: 4,
+    availableSeats: 3,
+    pricePerSeat: 30,
+    car: 'Volkswagen Golf · Noir',
+    notes: 'Musique OK, pause café en route.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr5',
+    type: 'Transfer',
+    driverName: 'Rania Gharbi',
+    driverRating: 5.0,
+    from: 'Aéroport Tunis-Carthage',
+    to: 'Tozeur',
+    destinationSpot: 'Tozeur',
+    departureDate: '2026-06-18',
+    departureTime: '11:00',
+    totalSeats: 6,
+    availableSeats: 4,
+    pricePerSeat: 55,
+    car: 'Toyota Prado · Beige',
+    notes: 'Transfert aéroport direct. Idéal pour groupes.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr6',
+    type: 'Covoiturage',
+    driverName: 'Khaled Chebbi',
+    driverRating: 4.5,
+    from: 'Monastir — Centre Ville',
+    to: 'Matmata',
+    destinationSpot: 'Matmata',
+    departureDate: '2026-06-20',
+    departureTime: '07:00',
+    totalSeats: 4,
+    availableSeats: 2,
+    pricePerSeat: 32,
+    car: 'Renault Megane · Rouge',
+    notes: 'Route via Gabès. Départ ponctuel.',
+    status: 'AVAILABLE',
+  },
+  {
+    id: 'tr7',
+    type: 'Shuttle',
+    driverName: 'CampyWin Express',
+    driverRating: 4.8,
+    from: 'Hammamet — Médina',
+    to: 'Nabeul Coast Camp',
+    destinationSpot: 'Nabeul',
+    departureDate: '2026-06-13',
+    departureTime: '10:30',
+    totalSeats: 8,
+    availableSeats: 0,
+    pricePerSeat: 20,
+    car: 'Van Toyota · Blanc',
+    notes: 'Navette côtière CampyWin. Équipement accepté.',
+    status: 'FULL',
+  },
+  {
+    id: 'tr8',
+    type: 'Covoiturage',
+    driverName: 'Ines Mansouri',
+    driverRating: 4.8,
+    from: 'Sousse — Place Farhat Hached',
+    to: 'Ain Draham',
+    destinationSpot: 'Ain Draham',
+    departureDate: '2026-06-19',
+    departureTime: '06:30',
+    totalSeats: 3,
+    availableSeats: 2,
+    pricePerSeat: 40,
+    car: 'Hyundai Tucson · Bleu',
+    notes: 'Voiture confortable. Coffre spacieux pour tentes.',
+    status: 'AVAILABLE',
+  },
+];
+
+export const MY_RIDES: MyRide[] = [
+  {
+    id: 'mr1',
+    role: 'passenger',
+    offer: TRANSPORT_OFFERS[0],
+    seats: 2,
+    totalPaid: 70,
+    bookedAt: '2026-06-05',
+    status: 'CONFIRMED',
+  },
+  {
+    id: 'mr2',
+    role: 'driver',
+    offer: {
+      ...TRANSPORT_OFFERS[3],
+      id: 'tr4-mine',
+      driverName: 'Moi',
+      from: 'Tunis — Cité Olympique',
+      totalSeats: 3,
+      availableSeats: 1,
+    },
+    seats: 0,
+    totalPaid: 0,
+    bookedAt: '2026-06-04',
+    status: 'CONFIRMED',
+  },
+  {
+    id: 'mr3',
+    role: 'passenger',
+    offer: TRANSPORT_OFFERS[2],
+    seats: 1,
+    totalPaid: 45,
+    bookedAt: '2026-05-28',
+    status: 'COMPLETED',
+  },
+];
