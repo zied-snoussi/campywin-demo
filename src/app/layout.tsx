@@ -123,7 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect for Unsplash images */}
         <link rel="preconnect" href="https://images.unsplash.com" />
       </head>
-      <body className={`${inter.variable} font-sans min-h-screen antialiased`}>
+      <body className={`${inter.variable} font-sans min-h-screen antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           {children}
           <InstallPrompt />
