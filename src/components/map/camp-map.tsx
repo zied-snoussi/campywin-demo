@@ -46,7 +46,6 @@ export function CampMap({ onBookClick, compact = false }: Props) {
         zoomControl: !compact,
         scrollWheelZoom: !compact,
         dragging: !compact,
-        tap: false, // prevents ghost-click on mobile Safari
         attributionControl: false,
       });
 

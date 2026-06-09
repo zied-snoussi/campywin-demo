@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity, Calendar, Shield } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
