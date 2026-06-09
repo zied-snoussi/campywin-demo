@@ -192,7 +192,7 @@ export default function ManageJobsPage() {
               </div>
               <div className="space-y-1.5">
                 <Label>Type</Label>
-                <Select value={form.type} onValueChange={v => setForm(f => ({ ...f, type: v }))}>
+                <Select value={form.type} onValueChange={v => setForm(f => ({ ...f, type: v ?? '' }))}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>

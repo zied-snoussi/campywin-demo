@@ -266,7 +266,7 @@ export default function ManageAccommodationsPage() {
                 </div>
                 <div className="space-y-1.5">
                   <Label>Category</Label>
-                  <Select value={form.category} onValueChange={v => setForm(f => ({ ...f, category: v }))}>
+                  <Select value={form.category} onValueChange={v => setForm(f => ({ ...f, category: v ?? '' }))}>
                     <SelectTrigger className="w-full">
                       <SelectValue />
                     </SelectTrigger>
