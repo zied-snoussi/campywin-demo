@@ -1,6 +1,6 @@
 ﻿'use client';
 import {
-  LayoutDashboard, Calendar, MapPin, Briefcase, Package,
+  LayoutDashboard, Calendar, MapPin, Briefcase, Package, Building2, Newspaper,
   Car, BarChart3, Mail, TrendingUp, Star, Download,
   DollarSign, CalendarCheck, Users, Wrench, ClipboardList,
 } from 'lucide-react';
@@ -17,9 +17,11 @@ const NAV_ORG = [
   { label: 'Accommodations', href: '/dashboard/organizer/accommodations',icon: MapPin },
   { label: 'Job Offers',     href: '/dashboard/organizer/jobs',          icon: Briefcase },
   { label: 'Equipment',      href: '/dashboard/organizer/equipment',     icon: Package },
-  { label: 'Transport',      href: '/dashboard/organizer/transport',     icon: Car },
-  { label: 'Analytics',      href: '/dashboard/organizer/analytics',     icon: BarChart3,   section: 'Insights' },
-  { label: 'Messages',       href: '/dashboard/organizer/messages',      icon: Mail,        section: 'Comms' },
+  { label: 'Transport',       href: '/dashboard/organizer/transport',      icon: Car },
+  { label: 'My Organization', href: '/dashboard/organizer/organization',   icon: Building2 },
+  { label: 'Analytics',       href: '/dashboard/organizer/analytics',      icon: BarChart3,   section: 'Insights' },
+  { label: 'Messages',        href: '/dashboard/organizer/messages',       icon: Mail,        section: 'Comms' },
+  { label: 'Newsletters',     href: '/dashboard/organizer/newsletters',    icon: Newspaper },
 ];
 
 const MONTHLY_DATA = [

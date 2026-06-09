@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import {
   LayoutDashboard, Users, Building2, Tent, Package,
-  Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings,
+  Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, Newspaper,
   Search, Filter,
 } from 'lucide-react';
 import { DashboardLayout } from '@/components/layout/dashboard-layout';
@@ -23,6 +23,7 @@ const NAV_ADMIN = [
   { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
   { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
   { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
+  { label: 'Newsletters',    href: '/dashboard/admin/newsletters',   icon: Newspaper },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 

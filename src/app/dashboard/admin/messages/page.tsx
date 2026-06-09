@@ -2,7 +2,7 @@
 import { DashboardLayout } from '@/components/layout/dashboard-layout';
 import { MessagesUI } from '@/components/messages/messages-ui';
 import { ADMIN_CONVERSATIONS } from '@/lib/mock-data';
-import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, Newspaper } from 'lucide-react';
 
 const NAV = [
   { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
@@ -15,6 +15,7 @@ const NAV = [
   { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
   { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
   { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
+  { label: 'Newsletters',    href: '/dashboard/admin/newsletters',   icon: Newspaper },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 

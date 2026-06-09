@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity, Calendar, Shield } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity, Calendar, Shield, Newspaper } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -22,6 +22,7 @@ const NAV = [
   { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy,    section: 'Support' },
   { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3,   section: 'Reports' },
   { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail,        section: 'Comms' },
+  { label: 'Newsletters',    href: '/dashboard/admin/newsletters',   icon: Newspaper },
   { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
