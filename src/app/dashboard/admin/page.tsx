@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Home, Users, Calendar, Settings, Shield, BarChart3, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity } from 'lucide-react';
+import { LayoutDashboard, Users, Building2, Tent, Package, Briefcase, FileText, LifeBuoy, BarChart3, Mail, Settings, AlertCircle, CheckCircle, XCircle, TrendingUp, Activity } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,12 +12,17 @@ import { useStore } from '@/lib/store';
 import { ADMIN_STATS, DEMO_USERS } from '@/lib/mock-data';
 
 const NAV = [
-  { label: 'Overview', href: '/dashboard/admin', icon: Home },
-  { label: 'User Management', href: '/dashboard/admin', icon: Users },
-  { label: 'Events Moderation', href: '/dashboard/admin', icon: Calendar },
-  { label: 'Analytics', href: '/dashboard/admin', icon: BarChart3 },
-  { label: 'Security', href: '/dashboard/admin', icon: Shield },
-  { label: 'Settings', href: '/dashboard/admin', icon: Settings },
+  { label: 'Overview',       href: '/dashboard/admin',               icon: LayoutDashboard },
+  { label: 'Users',          href: '/dashboard/admin/users',         icon: Users },
+  { label: 'Organizations',  href: '/dashboard/admin/organizations',  icon: Building2 },
+  { label: 'Accommodations', href: '/dashboard/admin/accommodations', icon: Tent },
+  { label: 'Inventory',      href: '/dashboard/admin/inventory',     icon: Package },
+  { label: 'Job Offers',     href: '/dashboard/admin/jobs',          icon: Briefcase },
+  { label: 'Content',        href: '/dashboard/admin/content',       icon: FileText },
+  { label: 'Support',        href: '/dashboard/admin/support',       icon: LifeBuoy },
+  { label: 'Analytics',      href: '/dashboard/admin/analytics',     icon: BarChart3 },
+  { label: 'Messages',       href: '/dashboard/admin/messages',      icon: Mail },
+  { label: 'Settings',       href: '/dashboard/admin/settings',      icon: Settings },
 ];
 
 const MOCK_USERS = [

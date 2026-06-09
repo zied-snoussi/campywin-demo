@@ -125,26 +125,26 @@ export default function LandingPage() {
       </section>
 
       {/* ── Trust & Stats ── */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4">
               Trusted by Travelers Worldwide
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Our platform connects adventurers and hosts across Tunisia, creating unforgettable experiences.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {STATS.map(({ value, label, icon: Icon, color, bg }) => (
-              <div key={label} className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700">
-                <div className="flex justify-center mb-4">
-                  <div className={`w-12 h-12 ${bg} rounded-lg flex items-center justify-center`}>
-                    <Icon className={`w-6 h-6 ${color}`} />
+              <div key={label} className="bg-white dark:bg-gray-800 rounded-xl p-5 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700">
+                <div className="flex justify-center mb-3 sm:mb-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${bg} rounded-lg flex items-center justify-center`}>
+                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${color}`} />
                   </div>
                 </div>
-                <div className={`text-4xl md:text-5xl font-black mb-2 ${color}`}>{value}</div>
-                <div className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">{label}</div>
+                <div className={`text-2xl sm:text-4xl md:text-5xl font-black mb-1 sm:mb-2 ${color}`}>{value}</div>
+                <div className="text-gray-700 dark:text-gray-300 font-semibold text-xs sm:text-sm md:text-base">{label}</div>
               </div>
             ))}
           </div>
@@ -152,22 +152,22 @@ export default function LandingPage() {
       </section>
 
       {/* ── Featured Outposts ── */}
-      <section id="featured" className="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-end justify-between mb-16">
+      <section id="featured" className="py-12 sm:py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-8 sm:mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">Verified Outposts</h2>
-              <p className="text-gray-700 dark:text-gray-300 text-lg">Hand-picked camping locations vetted for authenticity.</p>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-2 sm:mb-4">Verified Outposts</h2>
+              <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-lg">Hand-picked camping locations vetted for authenticity.</p>
             </div>
             <Link href="/accommodations" className="hidden md:flex items-center gap-2 font-bold text-emerald-700 dark:text-emerald-300 py-3 px-6 rounded-xl border-2 border-emerald-700/30 dark:border-emerald-500/30 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/30 transition-all">
               View All <Globe className="w-5 h-5" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">
             {ACCOMMODATIONS.slice(0, 3).map((acc) => (
               <Link href="/accommodations" key={acc.id} className="group cursor-pointer">
-                <div className="relative h-80 rounded-[2rem] overflow-hidden mb-6 bg-gray-200 dark:bg-gray-700">
+                <div className="relative h-56 sm:h-72 md:h-80 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden mb-4 sm:mb-6 bg-gray-200 dark:bg-gray-700">
                   <Image
                     src={acc.image} alt={acc.title} fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -196,11 +196,11 @@ export default function LandingPage() {
       </section>
 
       {/* ── Career Wins (Bento Grid) ── */}
-      <section id="careers" className="py-24 px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <section id="careers" className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-16">Career Wins</h2>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-8 sm:mb-16">Career Wins</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 sm:gap-6 h-auto md:h-[600px]">
             {/* Featured Job - Large Card */}
             <Link href="/jobs" className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-purple-600 to-purple-700 dark:from-purple-700 dark:to-purple-800 rounded-[2rem] p-10 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
               <div>
@@ -248,7 +248,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section id="testimonials" className="py-24 px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section id="testimonials" className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-6 border border-emerald-200 dark:border-emerald-800/50">
@@ -351,7 +351,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── About Section ── */}
-      <section id="about" className="py-24 px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section id="about" className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-6 border border-emerald-200 dark:border-emerald-800/50">
@@ -411,8 +411,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Interactive Map ── */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-12 sm:py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-4">
               <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -421,7 +421,7 @@ export default function LandingPage() {
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-3">Find Your Perfect Spot</h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Browse camping locations across Tunisia with live weather data at each spot — then book instantly.</p>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700" style={{ height: 420 }}>
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700" style={{ height: 'clamp(260px, 55vw, 420px)' }}>
             <MapTeaser />
           </div>
           <div className="text-center mt-8">
@@ -433,8 +433,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Gear Shop Teaser ── */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-12 sm:py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 rounded-full mb-4">
@@ -483,8 +483,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Upcoming Events ── */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-12 sm:py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2">Upcoming Adventures</h2>
