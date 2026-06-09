@@ -195,7 +195,13 @@ export function DashboardLayout({ children, navItems, title }: Props) {
               </button>
 
               {/* Messages */}
-              <button className="relative p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <button
+                onClick={() => {
+                  const base = user?.role === 'ADMIN' ? '/dashboard/admin' : '/dashboard/organizer';
+                  router.push(`${base}/messages`);
+                }}
+                className="relative p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
                 <Mail className="w-5 h-5" />
                 <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
               </button>

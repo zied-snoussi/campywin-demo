@@ -561,6 +561,196 @@ export const ORGANIZER_STATS = {
   pendingApplications: 16,
 };
 
+// ─── Messaging ────────────────────────────────────────────────────────────────
+
+export interface ChatMessage {
+  id: string;
+  senderId: string;  // 'me' | participant id
+  text: string;
+  timestamp: string;
+  read: boolean;
+}
+
+export interface Conversation {
+  id: string;
+  participantId: string;
+  participantName: string;
+  participantRole: string;
+  participantInitial: string;
+  online: boolean;
+  lastMessage: string;
+  lastMessageAt: string;
+  unread: number;
+  messages: ChatMessage[];
+}
+
+const ME = 'me';
+
+export const CLIENT_CONVERSATIONS: Conversation[] = [
+  {
+    id: 'c1',
+    participantId: 'org1',
+    participantName: 'Sahara Camp Pro',
+    participantRole: 'Organisateur',
+    participantInitial: 'S',
+    online: true,
+    lastMessage: "Votre réservation est confirmée pour le 15 juin !",
+    lastMessageAt: '10:42',
+    unread: 2,
+    messages: [
+      { id: 'm1', senderId: 'org1', text: "Bonjour ! Merci pour votre intérêt pour notre camp. Comment puis-je vous aider ?", timestamp: '09:15', read: true },
+      { id: 'm2', senderId: ME,    text: "Bonjour ! Je voudrais réserver une tente glamping pour 2 personnes du 15 au 18 juin.", timestamp: '09:22', read: true },
+      { id: 'm3', senderId: 'org1', text: "Parfait ! Nous avons encore de la disponibilité. Le prix est de 280 TND/nuit incluant le petit-déjeuner.", timestamp: '09:35', read: true },
+      { id: 'm4', senderId: ME,    text: "Est-ce qu'il est possible d'avoir une vue sur les dunes ?", timestamp: '09:38', read: true },
+      { id: 'm5', senderId: 'org1', text: "Absolument ! Notre tente Prestige a une vue panoramique sur les dunes de Douz. Je la mets de côté pour vous.", timestamp: '09:45', read: true },
+      { id: 'm6', senderId: ME,    text: "Super, comment procéder pour confirmer ?", timestamp: '10:30', read: true },
+      { id: 'm7', senderId: 'org1', text: "Votre réservation est confirmée pour le 15 juin !", timestamp: '10:42', read: false },
+      { id: 'm8', senderId: 'org1', text: "Un email de confirmation avec tous les détails vous sera envoyé dans quelques minutes. 🏕️", timestamp: '10:43', read: false },
+    ],
+  },
+  {
+    id: 'c2',
+    participantId: 'org2',
+    participantName: 'Atlas Eco Lodge',
+    participantRole: 'Organisateur',
+    participantInitial: 'A',
+    online: false,
+    lastMessage: "Nous avons des disponibilités en juillet.",
+    lastMessageAt: 'Hier',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: ME,    text: "Bonjour, avez-vous des disponibilités pour 4 personnes en juillet ?", timestamp: 'Hier 14:00', read: true },
+      { id: 'm2', senderId: 'org2', text: "Bonjour ! Oui, nous avons des disponibilités en juillet. Quelles dates vous conviendraient ?", timestamp: 'Hier 14:30', read: true },
+      { id: 'm3', senderId: ME,    text: "Du 10 au 14 juillet si possible.", timestamp: 'Hier 14:35', read: true },
+      { id: 'm4', senderId: 'org2', text: "Ces dates sont disponibles ! Je vous prépare une offre personnalisée.", timestamp: 'Hier 15:00', read: true },
+    ],
+  },
+  {
+    id: 'c3',
+    participantId: 'support',
+    participantName: 'Support CampyWin',
+    participantRole: 'Support',
+    participantInitial: '⚡',
+    online: true,
+    lastMessage: "Votre problème a été résolu. Bonne aventure !",
+    lastMessageAt: 'Lun',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: ME,       text: "Bonjour, j'ai un problème avec ma réservation #BK-2891.", timestamp: 'Lun 09:00', read: true },
+      { id: 'm2', senderId: 'support', text: "Bonjour ! Je consulte votre dossier immédiatement.", timestamp: 'Lun 09:05', read: true },
+      { id: 'm3', senderId: 'support', text: "Le problème de paiement a bien été identifié et corrigé. Un remboursement de 45 TND a été initié.", timestamp: 'Lun 09:12', read: true },
+      { id: 'm4', senderId: ME,        text: "Merci beaucoup pour la réactivité !", timestamp: 'Lun 09:15', read: true },
+      { id: 'm5', senderId: 'support', text: "Votre problème a été résolu. Bonne aventure ! 🏕️", timestamp: 'Lun 09:16', read: true },
+    ],
+  },
+  {
+    id: 'c4',
+    participantId: 'org3',
+    participantName: 'Tabarka Beach Camp',
+    participantRole: 'Organisateur',
+    participantInitial: 'T',
+    online: false,
+    lastMessage: "L'événement commence à 18h00.",
+    lastMessageAt: 'Sam',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: ME,    text: "Quelle est l'heure exacte de début pour l'événement Stargazing ?", timestamp: 'Sam 16:00', read: true },
+      { id: 'm2', senderId: 'org3', text: "L'événement commence à 18h00.", timestamp: 'Sam 16:30', read: true },
+    ],
+  },
+];
+
+export const ADMIN_CONVERSATIONS: Conversation[] = [
+  {
+    id: 'ac1',
+    participantId: 'u1',
+    participantName: 'Ahmed Ben Ali',
+    participantRole: 'Organisateur',
+    participantInitial: 'A',
+    online: true,
+    lastMessage: "J'ai soumis les documents demandés.",
+    lastMessageAt: '11:20',
+    unread: 1,
+    messages: [
+      { id: 'm1', senderId: ME,   text: "Bonjour Ahmed, votre demande d'accréditation est en cours d'examen.", timestamp: '09:00', read: true },
+      { id: 'm2', senderId: 'u1', text: "Merci. Quels documents dois-je encore fournir ?", timestamp: '09:30', read: true },
+      { id: 'm3', senderId: ME,   text: "Nous avons besoin d'une copie de votre registre de commerce et d'une attestation fiscale.", timestamp: '09:45', read: true },
+      { id: 'm4', senderId: 'u1', text: "J'ai soumis les documents demandés.", timestamp: '11:20', read: false },
+    ],
+  },
+  {
+    id: 'ac2',
+    participantId: 'u2',
+    participantName: 'Lina Mrad',
+    participantRole: 'Client',
+    participantInitial: 'L',
+    online: false,
+    lastMessage: "Merci pour la résolution rapide !",
+    lastMessageAt: 'Hier',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: 'u2', text: "Bonjour, je rencontre un problème avec mon remboursement.", timestamp: 'Hier 10:00', read: true },
+      { id: 'm2', senderId: ME,   text: "Bonjour Lina, je consulte votre dossier. Pouvez-vous me donner votre numéro de réservation ?", timestamp: 'Hier 10:05', read: true },
+      { id: 'm3', senderId: 'u2', text: "C'est la réservation #BK-3042.", timestamp: 'Hier 10:07', read: true },
+      { id: 'm4', senderId: ME,   text: "Le remboursement de 320 TND a été traité. Vous recevrez les fonds sous 3-5 jours ouvrables.", timestamp: 'Hier 10:20', read: true },
+      { id: 'm5', senderId: 'u2', text: "Merci pour la résolution rapide !", timestamp: 'Hier 10:22', read: true },
+    ],
+  },
+];
+
+export const ORGANIZER_CONVERSATIONS: Conversation[] = [
+  {
+    id: 'oc1',
+    participantId: 'cl1',
+    participantName: 'Yassine Trabelsi',
+    participantRole: 'Client',
+    participantInitial: 'Y',
+    online: true,
+    lastMessage: "Super ! À bientôt au camp 🏕️",
+    lastMessageAt: '13:05',
+    unread: 1,
+    messages: [
+      { id: 'm1', senderId: 'cl1', text: "Bonjour ! Je voudrais savoir si les repas sont inclus dans la formule Prestige.", timestamp: '12:30', read: true },
+      { id: 'm2', senderId: ME,    text: "Bonjour Yassine ! Oui, la formule Prestige comprend 3 repas par jour : petit-déjeuner, déjeuner et dîner sous les étoiles.", timestamp: '12:40', read: true },
+      { id: 'm3', senderId: 'cl1', text: "Parfait ! Est-ce que le transport depuis Tunis est disponible ?", timestamp: '12:45', read: true },
+      { id: 'm4', senderId: ME,    text: "Oui ! Nous proposons une navette depuis Tunis le vendredi à 8h pour 45 TND/personne.", timestamp: '12:55', read: true },
+      { id: 'm5', senderId: 'cl1', text: "Super ! À bientôt au camp 🏕️", timestamp: '13:05', read: false },
+    ],
+  },
+  {
+    id: 'oc2',
+    participantId: 'cl2',
+    participantName: 'Sarra Belhaj',
+    participantRole: 'Client',
+    participantInitial: 'S',
+    online: false,
+    lastMessage: "Merci, j'ai finalisé ma réservation.",
+    lastMessageAt: 'Hier',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: 'cl2', text: "Bonjour, y a-t-il une réduction pour les groupes ?", timestamp: 'Hier 15:00', read: true },
+      { id: 'm2', senderId: ME,    text: "Oui ! Pour 5 personnes et plus, nous offrons 15% de réduction sur le tarif standard.", timestamp: 'Hier 15:20', read: true },
+      { id: 'm3', senderId: 'cl2', text: "Merci, j'ai finalisé ma réservation.", timestamp: 'Hier 16:00', read: true },
+    ],
+  },
+  {
+    id: 'oc3',
+    participantId: 'admin',
+    participantName: 'Admin CampyWin',
+    participantRole: 'Admin',
+    participantInitial: '🛡️',
+    online: true,
+    lastMessage: "Votre profil a été vérifié et approuvé.",
+    lastMessageAt: 'Mer',
+    unread: 0,
+    messages: [
+      { id: 'm1', senderId: ME,    text: "Bonjour, j'ai soumis mes documents d'accréditation il y a 3 jours.", timestamp: 'Mer 10:00', read: true },
+      { id: 'm2', senderId: 'admin', text: "Bonjour ! Nous les avons bien reçus et sont en cours d'examen.", timestamp: 'Mer 10:30', read: true },
+      { id: 'm3', senderId: 'admin', text: "Votre profil a été vérifié et approuvé.", timestamp: 'Mer 14:00', read: true },
+    ],
+  },
+];
+
 // ─── Transport & Covoiturage ──────────────────────────────────────────────────
 
 export type TransportType = 'Covoiturage' | 'Shuttle' | 'Transfer';

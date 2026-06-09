@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ShoppingCart, Plus, Minus, Trash2, CheckCircle, Calendar, BookOpen, User, MessageSquare, ShoppingBag, Package, Map, Car } from 'lucide-react';
+import { Home, MapPin, Briefcase, HelpCircle, Moon, Sun, LogOut, X, Send, Bell, ShoppingCart, Plus, Minus, Trash2, CheckCircle, Calendar, BookOpen, User, MessageSquare, ShoppingBag, Package, Map, Car, Mail } from 'lucide-react';
 import { useStore } from '@/lib/store';
+import { CLIENT_CONVERSATIONS } from '@/lib/mock-data';
 import { CaptainChatbot } from '@/components/captain/captain-chatbot';
 
 const NOTIFS = [
@@ -164,6 +165,18 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
               className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800 transition-colors text-emerald-700 dark:text-emerald-400">
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
+            {/* Messages */}
+            <button
+              onClick={() => router.push('/dashboard/client/messages')}
+              aria-label="Messages"
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-emerald-100 dark:hover:bg-emerald-800 transition-colors text-emerald-700 dark:text-emerald-400 relative"
+            >
+              <Mail className="w-5 h-5" />
+              {CLIENT_CONVERSATIONS.some(c => c.unread > 0) && (
+                <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full" />
+              )}
+            </button>
+
             {/* Notifications */}
             <div className="relative" ref={notifRef}>
               <button onClick={() => setNotifOpen(o => !o)} aria-label="Notifications"
@@ -325,6 +338,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
                       { href: '/dashboard/client/bookings', icon: BookOpen, label: 'My Bookings' },
                       { href: '/dashboard/client/applications', icon: Briefcase, label: 'Applications' },
                       { href: '/dashboard/client/events', icon: Calendar, label: 'Events' },
+                      { href: '/dashboard/client/messages', icon: Mail, label: 'Messages' },
                       { href: '/dashboard/client/forum', icon: MessageSquare, label: 'Forum' },
                       { href: '/dashboard/client/map', icon: Map, label: 'Explore Map' },
                       { href: '/dashboard/client/products', icon: ShoppingBag, label: 'Gear Shop' },
